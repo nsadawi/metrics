@@ -1,0 +1,54 @@
+\newcount\Comments  
+\Comments=1   
+\documentclass[a4paper,12pt, english]{article}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{babel}
+%\usepackage{amsmath}
+
+\usepackage{color}
+
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{purple}{rgb}{1,0,1}
+%\usepackage{subcaption}
+
+\newcommand{\kibitz}[2]{\ifnum\Comments=1\textcolor{#1}{#2}\fi}
+% add yourself here:
+\newcommand{\ls}[1]{\kibitz{red}      {[Larisa: #1]}}
+\newcommand{\cc}[1]  {\kibitz{purple}   {[Crina: #1]}}
+\newcommand{\ns}[1]{\kibitz{cyan}     {[Noureddin: #1]}}
+
+
+
+\usepackage{listings}
+\usepackage{url}
+%\usepackage{graphicx}
+
+\usepackage{verbatim}
+
+%\usepackage{caption}
+%\usepackage{enumitem}
+
+%\onehalfspacing
+
+\begin{document}
+
+\title{A List of Suggestions/Notes/Ideas}
+%\date{Mar 2014}
+%\author{By: Noureddin Sadawi}
+%\maketitle
+
+\large
+\section{By Noureddin}
+\begin{enumerate}
+	\item Please create your own section (copy and paste this \LaTeX  source :-) )
+	\item Add your thoughts/suggestions/comments
+	\item Add dates so we keep up to date with progress
+	\item Look at this example: \ns{This is how you comment on something!}
+	\item For Larisa it's \ls{I love Japanese tea with rice!}
+	\item For Crina it's  \cc{I love Japanese rice with tea!}
+\end{enumerate}    
+
+
+		
+\end{document}
