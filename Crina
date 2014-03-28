@@ -1,0 +1,63 @@
+\newcount\Comments  
+\Comments=1   
+\documentclass[a4paper,12pt, english]{article}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{babel}
+%\usepackage{amsmath}
+
+\usepackage{color}
+
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{purple}{rgb}{1,0,1}
+%\usepackage{subcaption}
+
+\newcommand{\kibitz}[2]{\ifnum\Comments=1\textcolor{#1}{#2}\fi}
+% add yourself here:
+\newcommand{\ls}[1]{\kibitz{red}      {[Larisa: #1]}}
+\newcommand{\cg}[1]  {\kibitz{purple}   {[Crina: #1]}}
+\newcommand{\ns}[1]{\kibitz{cyan}     {[Noureddin: #1]}}
+
+
+
+\usepackage{listings}
+\usepackage{url}
+%\usepackage{graphicx}
+
+\usepackage{verbatim}
+
+%\usepackage{caption}
+%\usepackage{enumitem}
+
+%\onehalfspacing
+
+\begin{document}
+
+\title{A List of Suggestions/Notes/Ideas}
+%\date{Mar 2014}
+%\author{By: Noureddin Sadawi}
+%\maketitle
+
+\large
+\section{By Noureddin}
+\begin{enumerate}
+	\item Please create your own section (copy and paste this \LaTeX  source :-) )
+	\item Add your thoughts/suggestions/comments
+	\item Add dates so we keep up to date with progress
+	\item Look at this example: \ns{This is how you comment on something!}
+	\item For Larisa it's \ls{I love Japanese tea with rice!}
+	\item For Crina it's  \cg{I love Japanese rice with tea!}
+\end{enumerate}    
+\cg{
+\section{Crina}
+My two suggestions during the meeting where:
+\begin{itemize}
+\item Find the characteristics of the data set (something which defines very well our data and makes the difference between our data and other data sets). For instance, if we say 10 features, this will not make a difference. But if we say 10 features, first 3 are real values, 4 and 5 are binary and 6-10 are real values between 0-1, this will be more specific.
+\item define the problem output (or scope): in our case will be binary classification and not regression?
+\item define how we are going to achieve this scope: this may involve more criteria in which case we will need to look at the performance of the methods we apply from various angles
+\item define a set of machine learning methods suitable for this scope
+\item define a set of measures or metrics which evaluate these machine learning methods for this scope. Some of the metrics may be standard, but we might need some other aspects and for this we will have to define ourself some measures
+\end{itemize}
+Noureddin, put together what you have so far and what you find in the literature strictly for this type of problem  and I can also look after that and complement with what I know.
+}
+\end{document}
