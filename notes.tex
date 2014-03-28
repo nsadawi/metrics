@@ -39,22 +39,32 @@
 %\maketitle
 
 \large
-\section{By Noureddin}
+\section{By Noureddin \date{\today}}
 \begin{enumerate}
-	\item Please create your own section (copy and paste this \LaTeX  source :-) )
-	\item Add your thoughts/suggestions/comments
-	\item Add dates so we keep up to date with progress
-	\item Look at this example: \ns{This is how you comment on something!}
-	\item For Larisa it's \ls{I love Japanese tea with rice!}
-	\item For Crina it's  \cg{I love Japanese rice with tea!}
+	\item I have split the dataset from Dundee into 4565 datasets using the column TID (Target ID)
+	\item Some datasets are too small ($<$ 10 instances) and some have thousands of instances!
+	\item Some stats:
+	\begin{enumerate}
+	\item No of DS with $>=$ 2000 instances = 74
+	\item No of DS with $>=$ 1500 instances = 126
+	\item No of DS with $>=$ 1000 instances = 234
+	\item No of DS with $>=$ 500 instances = 506
+	\end{enumerate}    
+	
+	\item We have a large list of metrics from WEKA. However, not all are suitable for QSAR studies
+	\item There are some domain specific metrics (specific for QSAR) and they're not in WEKA
+	\item Some of these domain specific metrics include:  pROC, BEDROC (for ROC curve, they focus on what they denote \emph{early recognition problem}) and RIE
+	\item Another metric is called SLR from this paper\footnote{\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2722655/?tool=pmcentrez&report=abstract}}
+	\item Matthew's Correlation Coefficient is also popular\footnote{\url{http://journal.chemistrycentral.com/content/2/1/3}}. It exists in WEKA
+	\item There is a paper about \emph{Evaluating Virtual Screening Methods}\footnote{\url{http://www.ncbi.nlm.nih.gov/pubmed/17288412}}. It looks VERY interesting. Maybe I will read it after I come back. Please go through it if you have time!
 \end{enumerate}    
 
 \section{By Larisa}
 \begin{enumerate}
-	\item We have analysed available descriptors from various sources (bottom-up approach), and there are too many of them. We now will try top-down approach. We will consider several datasets, from Dundee and publicly available ones, e.g. from ChEMBL and also several QSAR studies. We will try to annotate them with some descriptors that would convey what is important to record about those datasets and QSAR- specific studies. We then will come up with a set of descriptors that are suited for our task. We will check if what existing resources have the required descriptors, and if necessary we will define new ones (see the next point).
+	\item We have analysed available descriptors from various sources (bottom-up approach), and there are too many of them. We now will try top-down approach. We will consider several datasets, from Dundee and publicly available ones, e.g. from ChEMBL \ns{I think people from Dundee always use ChEMBL} and also several QSAR studies. We will try to annotate them with some descriptors that would convey what is important to record about those datasets and QSAR- specific studies. We then will come up with a set of descriptors that are suited for our task. We will check if what existing resources have the required descriptors, and if necessary we will define new ones (see the next point).
 	\item Crina suggested that we can develop new descriptors/ measures that fit better to support our task.
-	\item We will target to come up with ~50 descriptors and we will evaluate them with experts through questionary and select  ~ 20 the most popular descriptors.
-	\item We will also put our questionary to a public domain and give an opportunity to everyone to comment on descriptors. Such an approach would ensure that we identify a set of useful descriptors.
+	\item We will target to come up with \textasciitilde50 descriptors and we will evaluate them with experts through questionary and select  ~ 20 the most popular descriptors.
+	\item We will also put our questionary to a public domain and give an opportunity to everyone to comment on descriptors. Such an approach would ensure that we identify a set of useful descriptors \ns{I emailed Egon Willighagen\footnote{\url{http://chem-bla-ics.blogspot.co.uk/}} but he has not responded yet}.
 \end{enumerate}  
 
 
@@ -62,9 +72,9 @@
 My two suggestions during the meeting where:
 \begin{itemize}
 \item Find the characteristics of the data set (something which defines very well our data and makes the difference between our data and other data sets). For instance, if we say 10 features, this will not make a difference. But if we say 10 features, first 3 are real values, 4 and 5 are binary and 6-10 are real values between 0-1, this will be more specific.
-\item define the problem output (or scope): in our case will be binary classification and not regression?
+\item define the problem output (or scope): in our case will be binary classification and not regression?\ns{they usually use both but at the end they use a threshold to decide whether the real value resulting from regression indicates compound is active or inactive - and this makes it binary classification}
 \item define how we are going to achieve this scope: this may involve more criteria in which case we will need to look at the performance of the methods we apply from various angles
-\item define a set of machine learning methods suitable for this scope
+\item define a set of machine learning methods suitable for this scope \ns{popular ones are Naive Bayes and Random Forests, I need to investigate further}
 \item define a set of measures or metrics which evaluate these machine learning methods for this scope. Some of the metrics may be standard, but we might need some other aspects and for this we will have to define ourself some measures
 \end{itemize}
 
