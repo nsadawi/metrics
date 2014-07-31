@@ -1,0 +1,432 @@
+\documentclass[a4paper,12pt, english]{article}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{babel}
+%\usepackage{amsmath}
+
+\usepackage{color}
+
+%\usepackage{subcaption}
+
+\usepackage{listings}
+\usepackage{url}
+%\usepackage{graphicx}
+
+\usepackage{verbatim}
+
+%\usepackage{caption}
+%\usepackage{enumitem}
+
+%\onehalfspacing
+
+\begin{document}
+
+\title{
+A List of [Binary] Classification Models' Evaluation Metrics\\
+Calculated by WEKA\\
+\small{67 metrics}
+}
+%\\ \small{\url{http://weka.sourceforge.net/doc.dev/weka/classifiers/Evaluation.html}}
+\date{31 Jul 2014}
+\author{By: Noureddin Sadawi}
+\maketitle
+
+\large
+This is a list of metrics that WEKA generates for evaluating [binary] classifiers. Notice that a simple definition has been provided for each of them (definitions were extracted from WEKA's source files).\\
+
+I have studied WEKA's source code and have worked out which metrics can be considered primary (i.e. calculated from the data) and which metrics are secondary (i.e. calculated from primary metrics). The results of this study are reported in the file: weka-params.pdf\\
+
+\begin{enumerate}
+
+\item \textbf{\textcolor{red}{Basic performance stats - right vs wrong}}
+\begin{enumerate}
+              
+\item \textbf{Correct: }
+          Gets the number of instances correctly classified (that is, for which a correct prediction was made).
+          
+\item \textbf{pct Correct: }
+          Gets the percentage of instances correctly classified (that is, for which a correct prediction was made). 
+
+\item \textbf{pct Incorrect: }
+          Gets the percentage of instances incorrectly classified (that is, for which an incorrect prediction was made).
+
+\item \textbf{pct Unclassified: }
+          Gets the percentage of instances not classified (that is, for which no prediction was made by the classifier). 
+
+\item \textbf{Incorrect: }
+          Gets the number of instances incorrectly classified (that is, for which an incorrect prediction was made). 
+          
+\item \textbf{Kappa: }
+          Returns value of kappa statistic if class is nominal. 
+          
+\item \textbf{Unclassified: }
+          Gets the number of instances not classified (that is, for which no prediction was made by the classifier).
+\end{enumerate}    
+
+\item  \textbf{\textcolor{red}{IR stats}}
+\begin{enumerate}          
+\item \textbf{Area Under ROC  [requires class index]: }
+          Returns the area under ROC for those predictions that have been collected in the evaluateClassifier(Classifier, Instances) method. 
+          
+\item \textbf{false Negative Rate [requires class index]: }
+          Calculate the false negative rate with respect to a particular class. 
+          
+\item \textbf{false Positive Rate [requires class index]: }
+          Calculate the false positive rate with respect to a particular class. 
+          
+\item \textbf{fMeasure [requires class index]: }
+          Calculate the F-Measure with respect to a particular class.
+          
+\item \textbf{num True Negatives [requires class index]: }
+          Calculate the number of true negatives with respect to a particular class.
+          
+\item \textbf{num True Positives [requires class index]: }
+          Calculate the number of true positives with respect to a particular class. 
+\item \textbf{numFalseNegatives [requires class index]: }
+          Calculate number of false negatives with respect to a particular class. 
+          
+\item \textbf{num False Positives [requires class index]: }
+          Calculate number of false positives with respect to a particular class. 
+          
+\item \textbf{precision [requires class index]: }
+          Calculate the precision with respect to a particular class.      
+          
+\item \textbf{recall [requires class index]: }
+          Calculate the recall with respect to a particular class. 
+          
+\item \textbf{true Negative Rate [requires class index]: }
+          Calculate the true negative rate with respect to a particular class.
+          
+\item \textbf{true Positive Rate [requires class index]: }
+          Calculate the true positive rate with respect to a particular class.
+\end{enumerate}     
+
+\item \textbf{\textcolor{red}{Weighted IR stats}}
+\begin{enumerate}
+\item \textbf{weighted Area Under ROC: }
+          Calculates the weighted (by class size) AUC. 
+
+\item \textbf{weighted False Negative Rate: }
+          Calculates the weighted (by class size) false negative rate. 
+          
+\item \textbf{weighted False Positive Rate: }
+          Calculates the weighted (by class size) false positive rate.                    
+
+\item \textbf{weighted FMeasure: }
+          Calculates the macro weighted (by class size) average F-Measure. 
+                 
+\item \textbf{weighted Precision: }
+          Calculates the weighted (by class size) precision. 
+                    
+\item \textbf{weighted Recall: }
+          Calculates the weighted (by class size) recall.          
+
+\item \textbf{weighted True Negative Rate: }
+          Calculates the weighted (by class size) true negative rate. 
+
+\item \textbf{weighted True Positive Rate: }
+          Calculates the weighted (by class size) true positive rate. 
+\end{enumerate}
+     
+
+\item \textbf{\textcolor{red}{SF stats}}
+\begin{enumerate}
+              
+\item \textbf{SF Entropy Gain: }
+          Returns the total SF, which is the null model entropy minus the scheme entropy.    
+          
+
+\item \textbf{SF Mean Entropy Gain: }
+          Returns the SF per instance, which is the null model entropy minus the scheme entropy, per instance.         
+          
+
+\item \textbf{SF Mean Prior Entropy: }
+          Returns the entropy per instance for the null model.       
+          
+\item \textbf{SF Mean Scheme Entropy: }
+          Returns the entropy per instance for the scheme        
+
+
+\item \textbf{SF Prior Entropy: }
+          Returns the total entropy for the null model.
+          
+\item \textbf{SF Scheme Entropy: }
+          Returns the total entropy for the scheme. 
+
+\end{enumerate}
+
+
+
+\item \textbf{\textcolor{red}{Sensitive stats - certainty of predictions}}
+\begin{enumerate}
+
+\item \textbf{relative Absolute Error: }
+          Returns the relative absolute error. 
+
+\item \textbf{root Mean Squared Error: }
+          Returns the root mean squared error.           
+
+\item \textbf{root Relative Squared Error: }
+          Returns the root relative squared error if the class is numeric. 
+                    
+\item \textbf{mean Absolute Error: }
+          Returns the mean absolute error. 
+\end{enumerate}    
+
+\item  \textbf{\textcolor{red}{K\&B stats}}
+\begin{enumerate}          
+\item \textbf{KB Information: }
+          Return the total Kononenko \& Bratko Information score in bits. 
+          
+\item \textbf{KB Mean Information: }
+          Return the Kononenko \& Bratko Information score in bits per instance. 
+          
+\item \textbf{KB Relative Information: }
+          Return the Kononenko \& Bratko Relative Information score.
+\end{enumerate}
+
+
+\item \textbf{area Under PRC [requires class index]: }
+          Returns the area under precision-recall curve (AUPRC) for those predictions that have been collected in the evaluateClassifier(Classifier, Instances) method.
+          
+
+
+\item \textbf{avg Cost: }
+          Gets the average cost, that is, total cost of misclassifications (incorrect plus unclassified) over the total number of instances.
+
+\item \textbf{confusion Matrix: }
+          Returns a copy of the confusion matrix.
+          
+
+          
+
+          
+\item \textbf{correlation Coefficient: }
+          Returns the correlation coefficient if the class is numeric.
+          
+\item \textbf{coverage Of Test Cases By Predicted Regions: }
+          Gets the coverage of the test cases by the predicted regions at the confidence level specified when evaluation was performed.
+          
+%\item \textbf{crossValidateModel(Classifier classifier, Instances data, int numFolds, java.util.Random random, java.lang.Object... forPredictionsPrinting)}
+%          Performs a (stratified if class is nominal) cross-validation for a classifier on a set of instances.
+
+%\item \textbf{crossValidateModel(java.lang.String classifierString, Instances data, int numFolds, java.lang.String[] options, java.util.Random random)}
+%          Performs a (stratified if class is nominal) cross-validation for a classifier on a set of instances.
+          
+%\item \textbf{dontDisplayMetrics(java.util.List<java.lang.String> metricsNotToDisplay)}
+%          Remove the supplied list of metrics from the list of those to display.
+          
+%\item \textbf{equals(java.lang.Object obj)}
+%          Tests whether the current evaluation object is equal to another evaluation object.
+          
+\item \textbf{error Rate: }
+          Returns the estimated error rate or the root mean squared error (if the class is numeric).
+
+                    
+
+\item \textbf{getClassPriors: }
+          Get the current weighted class counts.
+          
+%\item \textbf{getDiscardPredictions: }
+%          Returns whether predictions are not recorded at all, in order to conserve memory
+          
+          
+          
+
+
+
+          
+\item \textbf{matthews Correlation Coefficient [requires class index]: }
+          Calculates the matthews correlation coefficient (sometimes called phi coefficient) for the supplied class
+          
+
+          
+\item \textbf{mean Prior Absolute Error: }
+          Returns the mean absolute error of the prior.
+          
+
+
+\item \textbf{num Instances: }
+          Gets the number of test instances that had a known class value (actually the sum of the weights of test instances with known class values
+
+      
+      
+
+%\item \textbf{predictions: }
+%          Returns the predictions that have been collected.
+
+
+\item \textbf{prior Entropy: }
+          Calculate the entropy of the prior distribution.    
+                    
+\item \textbf{root Mean Prior Squared Error: }
+          Returns the root mean prior squared error.          
+          
+%\item \textbf{setDiscardPredictions(boolean value)}
+%          Sets whether to discard predictions, ie, not storing them for future reference via predictions:  method in order to conserve memory.          
+          
+%\item \textbf{setMetricsToDisplay(java.util.List<java.lang.String> display)}
+%          Set a list of the names of metrics to have appear in the output.          
+             
+\item \textbf{size Of Predicted Regions: }
+          Gets the average size of the predicted regions, relative to the range of the target in the training data, at the confidence level specified when evaluation was performed
+
+\item \textbf{total Cost: }
+          Gets the total cost, that is, the cost of each prediction times the weight of the instance, summed over all instances.                   
+
+\item \textbf{unweighted Macro Fmeasure: }
+          Unweighted macro-averaged F-measure.
+          
+\item \textbf{unweighted Micro Fmeasure: }
+          Unweighted micro-averaged F-measure.          
+
+\item \textbf{weighted Area Under PRC: }
+          Calculates the weighted (by class size) AUPRC.
+
+
+          
+\item \textbf{weighted Matthews Correlation: }
+          Calculates the weighted (by class size) matthews correlation coefficient.
+          
+\item Number\_of\_training\_instances
+
+\item Number\_of\_testing\_instances          
+
+\item Elapsed\_Time\_training
+
+\item Elapsed\_Time\_testing
+
+\item UserCPU\_Time\_training
+
+\item UserCPU\_Time\_testing
+    
+\item Serialized\_Model\_Size
+
+\item Serialized\_Train\_Set\_Size
+
+\item Serialized\_Test\_Set\_Size
+	    
+\end{enumerate}
+
+%\begin{enumerate}
+
+    %\item Number\_of\_training\_instances
+    %\item Number\_of\_testing\_instances
+
+    %\item Basic performance stats - right vs wrong - 
+    %\begin{enumerate}
+	  %%%  \item Number\_correct - eval.correct()
+	  %%%  \item Number\_incorrect - eval.incorrect()
+	  %%%  \item Number\_unclassified - eval.unclassified()
+	   %%%\item Percent\_correct - eval.pctCorrect()
+	   %%%\item Percent\_incorrect -  eval.pctIncorrect()
+	   %%% \item Percent\_unclassified - eval.pctUnclassified()
+	   %%% \item Kappa\_statistic - eval.kappa()          
+    
+    %\end{enumerate}
+
+    %\item Sensitive stats - certainty of predictions 
+    %\begin{enumerate}
+	   %%% \item Mean\_absolute\_error - eval.meanAbsoluteError()
+	   %%% \item Root\_mean\_squared\_error - eval.rootMeanSquaredError()
+	   %%% \item Relative\_absolute\_error - eval.relativeAbsoluteError()
+	   %%% \item Root\_relative\_squared\_error - eval.rootRelativeSquaredError()	    	                        
+    
+    %\end{enumerate}
+    %\item SF stats  \textcolor{red}{SF stats}
+    %\begin{enumerate}
+	    %%% \item SF\_prior\_entropy - eval.SFPriorEntropy()
+	   %%% \item SF\_scheme\_entropy - eval.SFSchemeEntropy()
+	   %%% \item SF\_entropy\_gain - eval.SFEntropyGain()
+	   %%% \item SF\_mean\_prior\_entropy - eval.SFMeanPriorEntropy()
+	   %%% \item SF\_mean\_scheme\_entropy - eval.SFMeanSchemeEntropy()
+	   %%% \item SF\_mean\_entropy\_gain - eval.SFMeanEntropyGain()
+	        
+   % \end{enumerate}
+    %\item K\&B stats \textcolor{red}{K\&B stats}
+    %\begin{enumerate}
+	  %%%  \item KB\_information -  eval.KBInformation()
+	  %%%  \item KB\_mean\_information - eval.KBMeanInformation()
+	  %%%  \item KB\_relative\_information - eval.KBRelativeInformation()
+
+    %\end{enumerate}
+   % \item IR stats   \textcolor{red}{IR stats}
+   % \begin{enumerate}
+	  %%%  \item True\_positive\_rate - eval.truePositiveRate(m\_IRclass)
+	    %%%\item Num\_true\_positives - eval.numTruePositives(m\_IRclass)
+	  %%%  \item False\_positive\_rate - eval.falsePositiveRate(m\_IRclass)
+	  %%%  \item Num\_false\_positives -  eval.numFalsePositives(m\_IRclass)
+	   %%% \item True\_negative\_rate - eval.trueNegativeRate(m\_IRclass)
+	  %%%  \item Num\_true\_negatives - eval.numTrueNegatives(m\_IRclass)
+	  %%%  \item False\_negative\_rate - eval.falseNegativeRate(m\_IRclass)
+	  %%%  \item Num\_false\_negatives - eval.numFalseNegatives(m\_IRclass)
+	  %%%  \item IR\_precision - eval.precision(m\_IRclass)
+	  %%%  \item IR\_recall - eval.recall(m\_IRclass)
+	  %%%  \item F\_measure - eval.fMeasure(m\_IRclass)
+	  %%%  \item Area\_under\_ROC -  eval.areaUnderROC(m\_IRclass)
+
+   % \end{enumerate}
+    %\item Weighted IR stats \textcolor{red}{Weighted IR stats}
+    %\begin{enumerate}
+	 %%%   \item Weighted\_avg\_true\_positive\_rate - eval.weightedTruePositiveRate()
+	 %%%   \item Weighted\_avg\_false\_positive\_rate - eval.weightedFalsePositiveRate()
+	 %%%   \item Weighted\_avg\_true\_negative\_rate - eval.weightedTrueNegativeRate()
+	%%%   \item Weighted\_avg\_false\_negative\_rate - eval.weightedFalseNegativeRate()
+	%%%    \item Weighted\_avg\_IR\_precision - eval.weightedPrecision()
+	%%%    \item Weighted\_avg\_IR\_recall - eval.weightedRecall()
+	%%%    \item Weighted\_avg\_F\_measure - eval.weightedFMeasure()
+	%%%    \item Weighted\_avg\_area\_under\_ROC - eval.weightedAreaUnderROC()
+  
+    %\end{enumerate}
+    %\item Timing stats
+    %\begin{enumerate}
+	    %\item Elapsed\_Time\_training
+	    %\item Elapsed\_Time\_testing
+	    %\item UserCPU\_Time\_training
+	    %\item UserCPU\_Time\_testing
+    %\end{enumerate}
+    %\item sizes
+    %\begin{enumerate}
+	    %\item Serialized\_Model\_Size
+	    %\item Serialized\_Train\_Set\_Size
+	    %\item Serialized\_Test\_Set\_Size
+    %\end{enumerate}
+    
+    %// ID/Targets/Predictions
+    %if (getAttributeID() >= 0) resultNames[current++] =\item Instance\_ID
+    %if (getPredTargetColumn()){
+    %    resultNames[current++] =\item Targets
+    %    resultNames[current++] =\item Predictions
+    %}
+    
+%\end{enumerate}
+
+\begin{comment}
+    train.numInstances()
+    eval.numInstances()
+    
+    
+    
+    
+    
+    
+    
+    // IR stats
+    
+    
+    // Weighted IR stats
+    
+    
+    // Timing stats
+    trainTimeElapsed / 1000.0
+    testTimeElapsed / 1000.0
+    if(canMeasureCPUTime) {
+      (trainCPUTimeElapsed/1000000.0) / 1000.0
+      (testCPUTimeElapsed /1000000.0) / 1000.0
+    }
+    else {
+      Instance.missingValue()
+      Instance.missingValue()
+    }
+\end{comment}
+\end{document}

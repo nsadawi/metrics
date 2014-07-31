@@ -1,0 +1,420 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{color}
+%\usepackage{babel}
+\begin{document}
+\title{A List of WEKA Parameters \& Functions used to Calculate Metrics}
+\date{19 Feb 2014}
+\author{By: Noureddin Sadawi}
+\maketitle
+
+\section{Params:}
+This is a list of parameters (variables) that WEKA uses for evaluation. They are computed/required for functions which are used to generate measurements/metrics for evaluation.\\
+
+Notice that a definition has been provided for each of them (definitions were extracted from WEKA's source files). Also, notice that if there is one or more numbers, those numbers refer to other parameters in the list and that means this parameter requires those parameters to be computed first, hence it is dependenet on them and therefore it is a secondary parameter.
+\begin{enumerate}
+     %* The number of classes. */
+  \item int m\_NumClasses: \\  The number of classes
+  
+  %* The weight of all instances that had a class assigned to them. */
+  \item double m\_WithClass: \\ The weight of all instances that had a class assigned to them
+
+  %* The weight of all incorrectly classified instances. */
+  \item double m\_Incorrect: \\  The weight of all incorrectly classified instances
+
+  %*  The weight of all incorrectly classified instances.. */
+  \item double m\_Correct: \\  The weight of all incorrectly classified instances.
+  	
+  %*  The weight of all incorrectly classified instances.. */
+  \item double m\_TotalCost: \\  The weight of all incorrectly classified instances. \textcolor{red}{8}
+
+  %* The weight of all unclassified instances. */
+  \item double m\_Unclassified: \\ The weight of all unclassified instances
+
+  %* Array for storing the confusion matrix. */
+  \item double[][] m\_ConfusionMatrix: \\ Array for storing the confusion matrix \textcolor{red}{1, 31} 
+  
+  %* The cost matrix (if given). */
+  \item CostMatrix m\_CostMatrix: \\ The cost matrix (if given)
+    
+  %* classIndex the index of the class */
+  \item int classIndex: \\ classIndex the index of the class
+  
+  %* The list of predictions that have been generated (for computing AUC). */
+  \item FastVector m\_Predictions: \\ The list of predictions that have been generated (for computing AUC)
+  
+  %* Total entropy of prior predictions. */
+  \item double m\_SumPriorEntropy: \\ Total entropy of prior predictions \textcolor{red}{27}
+  
+  %* Total entropy of scheme predictions. */
+  \item double m\_SumSchemeEntropy: \\ Total entropy of scheme predictions \textcolor{red}{29}
+  
+  %* Sum of absolute errors. */
+  \item double m\_SumAbsErr: \\ Sum of absolute errors \textcolor{red}{30,1}
+  
+  %* Sum of absolute errors of the prior. */
+  \item double m\_SumPriorAbsErr: \\ Sum of absolute errors of the prior \textcolor{red}{30,1}
+  
+  
+  %* Sum of squared errors. */
+  \item double m\_SumSqrErr: \\ Sum of squared errors \textcolor{red}{30,1}
+
+  %* Sum of absolute errors of the prior. */
+  \item double m\_SumPriorSqrErr: \\ Sum of absolute errors of the prior \textcolor{red}{30,1}
+  
+  %* Total Kononenko & Bratko Information. */
+  \item double m\_SumKBInfo: \\ Total Kononenko \& Bratko Information \textcolor{red}{27, 28, 31}
+  
+  %* The prior probabilities of the classes. */
+  \item double[] m\_ClassPriors: \\ The prior probabilities of the classes \textcolor{red}{33, 34}
+
+  %* The sum of counts for priors. */
+  \item double m\_ClassPriorsSum: \\ The sum of counts for priors  \textcolor{red}{34}
+  
+  %* Sum of squared class values. */
+  \item double m\_SumSqrClass: \\ Sum of squared class values  \textcolor{red}{31,35}     
+  
+  %* Sum of class values. */
+  \item double m\_SumClass: \\ Sum of class values \textcolor{red}{31,35} 
+  
+  %* Sum of squared predicted values. */
+  \item double m\_SumSqrPredicted: \\ Sum of squared predicted values \textcolor{red}{31,36} 
+  
+  %** Sum of predicted values. */
+  \item double m\_SumPredicted: \\ Sum of predicted values  \textcolor{red}{31,36} 
+
+  %* Sum of predicted * class values. */
+  \item double m\_SumClassPredicted: \\ Sum of predicted class values \textcolor{red}{31,35, 36} 
+  
+  %* Total coverage of test cases at the given confidence level. */
+  \item double m\_TotalCoverage: \\ Total coverage of test cases at the given confidence level \textcolor{red}{31} 
+  
+  %* Total size of predicted regions at the given confidence level. */
+  \item double m\_TotalSizeOfRegions: \\ Total size of predicted regions at the given confidence level \textcolor{red}{37, 38, 39} 
+  
+  %28  %* xx */
+  \item priorProb : \\  \textcolor{red}{18, 19} 
+    
+  
+   %28  %* the probabilities assigned to each class */
+  \item d[] predictedDistribution: \\ the probabilities assigned to each class
+  
+  %28  %* the  */
+  \item  predictedProb: \\  \textcolor{red}{28} 
+  
+%30  %* the weight associated with this prediction */
+  \item weight: \\   the weight associated with this prediction
+  (For updating the numeric accuracy measures. For numeric classes, the accuracy is
+   between the actual and predicted class values. For nominal classes, the
+   accuracy is between the actual and predicted class probabilities)
+  
+%31  %* the weight associated with the test instance to be classified */
+  \item tst\_InstanceWeight: \\   the weight associated with the test instance to be classified 
+  
+%32  %* Sum of errors. */
+  \item double m\_SumErr: \\  Sum of errors \textcolor{red}{30, 1} 
+  
+  
+ % 33  %* the class value of Training Instance */
+  \item tr\_InstanceClassValue: \\ the class value of Training Instance 
+  
+  %34  %* the weight associated with the training instance */
+  \item tr\_InstanceWeight: \\  the weight associated with the training instance
+  
+  %35  %* the class value of Test Instance */
+ \item tst\_InstanceClassValue: \\  the class value of Test Instance
+  
+ % 36 %* the numeric value the classifier predicts  */
+  \item predictedValue: \\ the numeric value the classifier predicts
+  
+  
+  %37 %*  */
+  \item double sizeOfRegions: \\  \textcolor{red}{28, 40} 
+  
+
+ %38 %* Maximum target Class value (numeric training class). Could be # of Classes */
+  \item double m\_MaxTarget: \\ Maximum target Class value (numeric training class). Could be \# of Classes
+  
+ 
+ %39 %* Minimum target Class value  (numeric training class). */
+  \item double m\_MinTarget: \\ Minimum target Class value  (numeric training class)
+  
+  
+  %40 %* the probabilities assigned to each class */
+  %\item []  predictedDistribution: \\ 
+  
+ %41 %* The confidence level used for coverage statistics. */
+  \item double m\_ConfLevel = 0.95: \\ The confidence level used for coverage statistics
+  
+  
+  
+  
+  
+  %** The weight of all instances that had no class assigned to them. */
+  %\item double m\_MissingClass;
+
+  
+
+  
+
+  %* The names of the classes. */
+  %\item String[] m\_ClassNames;
+
+  %* Is the class nominal or numeric? */
+  %\item boolean m\_ClassIsNominal;
+\end{enumerate}
+\newpage
+\section{Functions:}
+This is a list of functions that WEKA uses to generate measurements/metrics for evaluation. These functions use the parameters explained in the previous section.\\
+
+Notice that a description has been provided for each of these functions and they have been categorised (description and categorisation were extracted from WEKA's source files).\\
+
+Also, notice that if there is one or more numbers, those numbers refer to the parameters that these functions use. If there is an "=" sign, this means the function just returns that parameter rather than using it to compute something. Whenever the letter "F" is used, it means that particular function uses/requires another function (with the number of the required/used function following the "F"). This indicates that the function is dependenet on other function(s) and therefore it is a secondary function.
+
+\begin{enumerate}
+
+\item \textbf{\textcolor{red}{Basic performance stats - right vs wrong}}
+\begin{enumerate}
+              
+\item \textbf{correct()} \textcolor{red}{=4}
+          \\Gets the number of instances correctly classified (that is, for which a correct prediction was made).
+          
+\item \textbf{pctCorrect()} \textcolor{red}{2,4}
+          \\Gets the percentage of instances correctly classified (that is, for which a correct prediction was made). 
+
+\item \textbf{pctIncorrect()}\textcolor{red}{2,3}
+          \\Gets the percentage of instances incorrectly classified (that is, for which an incorrect prediction was made).
+
+\item \textbf{pctUnclassified()}\textcolor{red}{2,6}
+          \\Gets the percentage of instances not classified (that is, for which no prediction was made by the classifier). 
+
+\item \textbf{incorrect()} \textcolor{red}{=3}
+          \\Gets the number of instances incorrectly classified (that is, for which an incorrect prediction was made). 
+          
+\item \textbf{kappa()} \textcolor{red}{7}
+          \\Returns value of kappa statistic if class is nominal. 
+          
+\item \textbf{unclassified()} \textcolor{red}{=6}
+          \\Gets the number of instances not classified (that is, for which no prediction was made by the classifier).
+\end{enumerate}    
+
+\item  \textbf{\textcolor{red}{IR stats}}
+\begin{enumerate}          
+\item \textbf{areaUnderROC(int classIndex)} \textcolor{red}{1,7,9,10}
+          \\Returns the area under ROC for those predictions that have been collected in the evaluateClassifier(Classifier, Instances) method. 
+          
+\item \textbf{falseNegativeRate(int classIndex)} \textcolor{red}{1,7,9}
+          \\Calculate the false negative rate with respect to a particular class. 
+          
+\item \textbf{falsePositiveRate(int classIndex)} \textcolor{red}{1,7,9}
+          \\Calculate the false positive rate with respect to a particular class. 
+          
+\item \textbf{fMeasure(int classIndex)} \textcolor{red}{F2i, F2j, 9}
+          \\Calculate the F-Measure with respect to a particular class.
+          
+\item \textbf{numTrueNegatives(int classIndex)} \textcolor{red}{1,7,9}
+          \\Calculate the number of true negatives with respect to a particular class.
+          
+\item \textbf{numTruePositives(int classIndex)} \textcolor{red}{1,7,9}
+         \\ Calculate the number of true positives with respect to a particular class. 
+\item \textbf{numFalseNegatives(int classIndex)} \textcolor{red}{1,7,9}
+         \\ Calculate number of false negatives with respect to a particular class. 
+          
+\item \textbf{numFalsePositives(int classIndex)} \textcolor{red}{1,7,9}
+         \\ Calculate number of false positives with respect to a particular class. 
+          
+\item \textbf{precision(int classIndex)} \textcolor{red}{1,7,9}
+         \\ Calculate the precision with respect to a particular class.      
+          
+\item \textbf{recall(int classIndex)} \textcolor{red}{=F2l}
+         \\ Calculate the recall with respect to a particular class. 
+          
+\item \textbf{trueNegativeRate(int classIndex)} \textcolor{red}{1,7,9}
+          \\Calculate the true negative rate with respect to a particular class.
+          
+\item \textbf{truePositiveRate(int classIndex)} \textcolor{red}{1,7,9}
+          \\Calculate the true positive rate with respect to a particular class.
+\end{enumerate}     
+
+\item \textbf{\textcolor{red}{Weighted IR stats}}
+\begin{enumerate}
+\item \textbf{weightedAreaUnderROC()} \textcolor{red}{F2a,1,7}
+          \\Calculates the weighted (by class size) AUC. 
+
+\item \textbf{weightedFalseNegativeRate()} \textcolor{red}{F2b, 1,7}
+          \\Calculates the weighted (by class size) false negative rate. 
+          
+\item \textbf{weightedFalsePositiveRate()} \textcolor{red}{F2c, 1,7}
+         \\ Calculates the weighted (by class size) false positive rate.                    
+
+\item \textbf{weightedFMeasure()}\textcolor{red}{F2d, 1,7}
+        \\  Calculates the macro weighted (by class size) average F-Measure. 
+                 
+\item \textbf{weightedPrecision()} \textcolor{red}{F2i, 1,7}
+         \\ Calculates the weighted (by class size) precision. 
+                    
+\item \textbf{weightedRecall()} \textcolor{red}{= F3h}
+        \\  Calculates the weighted (by class size) recall.          
+
+\item \textbf{weightedTrueNegativeRate()} \textcolor{red}{F2k, 1,7}
+        \\  Calculates the weighted (by class size) true negative rate. 
+
+\item \textbf{weightedTruePositiveRate()} \textcolor{red}{F2l, 1,7}
+         \\ Calculates the weighted (by class size) true positive rate. 
+\end{enumerate}
+     
+
+\item \textbf{\textcolor{red}{SF stats}}
+\begin{enumerate}
+              
+\item \textbf{SFEntropyGain()} \textcolor{red}{11, 12}
+        \\  Returns the total SF, which is the null model entropy minus the scheme entropy.    
+          
+
+\item \textbf{SFMeanEntropyGain()} \textcolor{red}{2, 6, 11, 12}
+        \\  Returns the SF per instance, which is the null model entropy minus the scheme entropy, per instance.         
+          
+
+\item \textbf{SFMeanPriorEntropy()} \textcolor{red}{2, 11}
+         \\ Returns the entropy per instance for the null model.       
+          
+\item \textbf{SFMeanSchemeEntropy()} \textcolor{red}{2, 6, 12}
+         \\ Returns the entropy per instance for the scheme        
+
+ 
+\item \textbf{SFPriorEntropy()} \textcolor{red}{= 11}
+        \\  Returns the total entropy for the null model.
+          
+\item \textbf{SFSchemeEntropy()} \textcolor{red}{= 12}
+         \\ Returns the total entropy for the scheme. 
+
+\end{enumerate}
+
+
+
+\item \textbf{\textcolor{red}{Sensitive stats - certainty of predictions}}
+\begin{enumerate}
+
+\item \textbf{relativeAbsoluteError()} \textcolor{red}{F5d, F15}
+        \\  Returns the relative absolute error. 
+
+\item \textbf{rootMeanSquaredError()} \textcolor{red}{2, 6, 15}
+         \\ Returns the root mean squared error.           
+
+\item \textbf{rootRelativeSquaredError()} \textcolor{red}{F5b, F18}
+         \\ Returns the root relative squared error if the class is numeric. 
+                    
+\item \textbf{meanAbsoluteError()} \textcolor{red}{2, 6, 13}
+        \\  Returns the mean absolute error. 
+\end{enumerate}    
+
+\item  \textbf{\textcolor{red}{K\&B stats}}
+\begin{enumerate}          
+\item \textbf{KBInformation()} \textcolor{red}{ = 17}
+         \\ Return the total Kononenko \& Bratko Information score in bits. 
+          
+\item \textbf{KBMeanInformation()} \textcolor{red}{2, 6, 17}
+         \\ Return the Kononenko \& Bratko Information score in bits per instance. 
+           
+\item \textbf{KBRelativeInformation()} \textcolor{red}{F6a, F17}
+        \\  Return the Kononenko \& Bratko Relative Information score.
+\end{enumerate}
+
+
+\item \textbf{areaUnderPRC(int classIndex)} \textcolor{red}{ 9, 10}
+        \\  Returns the area under precision-recall curve (AUPRC) for those predictions that have been collected in the evaluateClassifier(Classifier, Instances) method.
+          
+
+
+\item \textbf{avgCost()} \textcolor{red}{5, 2}
+         \\ Gets the average cost, that is, total cost of misclassifications (incorrect plus unclassified) over the total number of instances.
+
+\item \textbf{confusionMatrix()}
+         \\ Returns a copy of the confusion matrix.
+          
+
+          
+
+          
+\item \textbf{correlationCoefficient()} \textcolor{red}{2, 6, 20, 21, 22, 23, 24}
+         \\ Returns the correlation coefficient if the class is numeric.
+          
+\item \textbf{coverageOfTestCasesByPredictedRegions()} \textcolor{red}{2, 25}
+         \\ Gets the coverage of the test cases by the predicted regions at the confidence level specified when evaluation was performed.
+          
+
+          
+\item \textbf{errorRate()} \textcolor{red}{2,3,6,15 OR = F8}
+          \\Returns the estimated error rate or the root mean squared error (if the class is numeric).
+
+                    
+
+\item \textbf{getClassPriors()} \textcolor{red}{ = 18}
+      \\    Get the current weighted class counts.
+                       
+
+
+          
+\item \textbf{matthewsCorrelationCoefficient(int classIndex)} \textcolor{red}{9, F2e, F2f, F2g, F2h}
+      \\    Calculates the matthews correlation coefficient (sometimes called phi coefficient) for the supplied class
+          
+
+          
+\item \textbf{meanPriorAbsoluteError()} \textcolor{red}{2, 14}
+       \\   Returns the mean absolute error of the prior.
+          
+
+
+\item \textbf{numInstances()} \textcolor{red}{ = 2}
+        \\  Gets the number of test instances that had a known class value (actually the sum of the weights of test instances with known class values
+            
+\item \textbf{priorEntropy()} \textcolor{red}{1, 18, 19}
+         \\ Calculate the entropy of the prior distribution.    
+                    
+\item \textbf{rootMeanPriorSquaredError()}  \textcolor{red}{2, 16}
+         \\ Returns the root mean prior squared error.          
+          
+       
+\item \textbf{setMetricsToDisplay(java.util.List<java.lang.String> display)}
+       \\   Set a list of the names of metrics to have appear in the output.          
+             
+\item \textbf{sizeOfPredictedRegions()} \textcolor{red}{2, 26}
+        \\  Gets the average size of the predicted regions, relative to the range of the target in the training data, at the confidence level specified when evaluation was performed
+
+\item \textbf{totalCost()} \textcolor{red}{ = 5}
+         \\ Gets the total cost, that is, the cost of each prediction times the weight of the instance, summed over all instances.                   
+
+\item \textbf{unweightedMacroFmeasure()} \textcolor{red}{1, F2f, F2g}
+        \\  Unweighted macro-averaged F-measure.
+          
+\item \textbf{unweightedMicroFmeasure()} \textcolor{red}{1, F2f, F2g, F2h}
+        \\  Unweighted micro-averaged F-measure.          
+
+\item \textbf{weightedAreaUnderPRC()} \textcolor{red}{1, 7, F7}
+        \\  Calculates the weighted (by class size) AUPRC.
+
+
+          
+\item \textbf{weightedMatthewsCorrelation()} \textcolor{red}{1, 7, F14}
+          \\Calculates the weighted (by class size) matthews correlation coefficient.
+          
+\item Number\_of\_training\_instances
+
+\item Number\_of\_testing\_instances          
+
+\item Elapsed\_Time\_training
+
+\item Elapsed\_Time\_testing
+
+\item UserCPU\_Time\_training
+
+\item UserCPU\_Time\_testing
+    
+\item Serialized\_Model\_Size
+
+\item Serialized\_Train\_Set\_Size
+
+\item Serialized\_Test\_Set\_Size
+	    
+\end{enumerate}
+\end{document}
