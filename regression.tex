@@ -23,7 +23,7 @@
 
 \begin{document}
 
-\title{A List of Regression Models' Evaluation Metrics Calculated by WEKA}
+\title{A List of Regression Models' Evaluation Metrics}
 %\\ \small{\url{http://weka.sourceforge.net/doc.dev/weka/classifiers/Evaluation.html}}
 \date{31 Jul 2014}
 \author{By: Noureddin Sadawi}
@@ -33,23 +33,23 @@
 
 \begin{enumerate}
 
-\item \textbf{\textcolor{red}{Sensitive stats - certainty of predictions}}
+\item \textbf{\textcolor{blue}{Error-based Measures (Sensitive stats - certainty of predictions)}} \textcolor{red}{in Expose}
 \begin{enumerate}
 
 \item \textbf{Mean Absolute Error: }
-      Returns the mean absolute error.
+      Returns the mean absolute error. %\textcolor{red}{Expose}
      
 
 \item \textbf{Root Mean Squared Error: }
-      Returns the root mean squared error.
+      Returns the root mean squared error. %\textcolor{red}{Expose}
                  
 
 \item \textbf{Relative Absolute Error: }
-      Returns the relative absolute error. 
+      Returns the relative absolute error. %\textcolor{red}{Expose}
       
           
 \item \textbf{Root Relative Squared Error: }
-      Returns the root relative squared error if the class is numeric. 
+      Returns the root relative squared error if the class is numeric. %\textcolor{red}{Expose}
       
       
 \begin{figure}[h]
@@ -88,13 +88,35 @@
         \caption{Metrics}\label{fig:metrics}
 \end{figure}
 
-                              
-\item \textbf{Correlation Coefficient: }
-          Returns the correlation coefficient if the class is numeric.        
+\item \textbf{Mean Squared Error: } %\textcolor{red}{Expose}
+\item \textbf{Mean Absolute Percentage Error: } %\textcolor{red}{Expose}
+\item \textbf{Normalized Mean Squared Error: } %\textcolor{red}{Expose}
+\item \textbf{r squared: } %\textcolor{red}{Expose}
+\item \textbf{Relative Squared Error: } %\textcolor{red}{Expose}
+\item \textbf{Sum Squared Error: } %\textcolor{red}{Expose}                                 
 				 
 \end{enumerate} 
+
+\item \textbf{Correlation Coefficient: }
+          Returns the correlation coefficient if the class is numeric.   \textcolor{red}{in Expose} 
 %\newpage
-\item \textbf{\textcolor{red}{SF stats}}
+
+\item \textbf{\textcolor{blue}{Information Criterion: }} \textcolor{red}{in Expose} 
+\begin{enumerate}
+\item \textbf{Akaike Information Criterion: }
+\item \textbf{Bayesian Information Criterion: }          
+
+\end{enumerate}
+
+\item \textbf{\textcolor{blue}{Robust Error Measures: }}
+\begin{enumerate}
+\item \textbf{Alpha Trimmed Mean Square Error: }
+\item \textbf{M Estimator: } 
+\item \textbf{Median Squared Error: }
+\end{enumerate}
+
+
+\item \textbf{\textcolor{blue}{SF stats}}
 \begin{enumerate}
 \item \textbf{SF Prior Entropy: }
           Returns the total entropy for the null model.
