@@ -38,7 +38,7 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 
 \begin{enumerate}
 
-\item \textbf{\textcolor{red}{Basic performance stats - right vs wrong}}
+\item \textbf{\textcolor{blue}{Basic performance stats - right vs wrong}}
 \begin{enumerate}
               
 \item \textbf{Correct: }
@@ -56,16 +56,16 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 \item \textbf{Incorrect: }
           Gets the number of instances incorrectly classified (that is, for which an incorrect prediction was made). 
           
-\item \textbf{Kappa: }
+\item \textbf{Kappa: } \textcolor{red}{Expose2}
           Returns value of kappa statistic if class is nominal. 
           
 \item \textbf{Unclassified: }
           Gets the number of instances not classified (that is, for which no prediction was made by the classifier).
 \end{enumerate}    
 
-\item  \textbf{\textcolor{red}{IR stats}}
+\item  \textbf{\textcolor{blue}{IR stats}}
 \begin{enumerate}          
-\item \textbf{Area Under ROC  [requires class index]: }
+\item \textbf{Area Under ROC  [requires class index]: } \textcolor{red}{Expose2}
           Returns the area under ROC for those predictions that have been collected in the evaluateClassifier(Classifier, Instances) method. 
           
 \item \textbf{false Negative Rate [requires class index]: }
@@ -74,36 +74,39 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 \item \textbf{false Positive Rate [requires class index]: }
           Calculate the false positive rate with respect to a particular class. 
           
-\item \textbf{fMeasure [requires class index]: }
+\item \textbf{fMeasure [requires class index]: } \textcolor{red}{Expose}
           Calculate the F-Measure with respect to a particular class.
           
-\item \textbf{num True Negatives [requires class index]: }
+\item \textbf{num True Negatives [requires class index]: } \textcolor{red}{Expose2}
           Calculate the number of true negatives with respect to a particular class.
           
-\item \textbf{num True Positives [requires class index]: }
+\item \textbf{num True Positives [requires class index]: } \textcolor{red}{Expose2}
           Calculate the number of true positives with respect to a particular class. 
-\item \textbf{numFalseNegatives [requires class index]: }
+
+\item \textbf{num FalseNegatives [requires class index]: } \textcolor{red}{Expose2}
           Calculate number of false negatives with respect to a particular class. 
           
-\item \textbf{num False Positives [requires class index]: }
+\item \textbf{num False Positives [requires class index]: } \textcolor{red}{Expose2}
           Calculate number of false positives with respect to a particular class. 
           
-\item \textbf{precision [requires class index]: }
+\item \textbf{precision [requires class index]: } \textcolor{red}{Expose2}
           Calculate the precision with respect to a particular class.      
           
-\item \textbf{recall [requires class index]: }
+\item \textbf{recall [requires class index]: } \textcolor{red}{Expose2}
           Calculate the recall with respect to a particular class. 
           
-\item \textbf{true Negative Rate [requires class index]: }
+\item \textbf{true Negative Rate (specificity:)   [requires class index]: } \textcolor{red}{Expose2} 
           Calculate the true negative rate with respect to a particular class.
           
 \item \textbf{true Positive Rate [requires class index]: }
           Calculate the true positive rate with respect to a particular class.
 \end{enumerate}     
 
-\item \textbf{\textcolor{red}{Weighted IR stats}}
+\item \textbf{\textcolor{blue}{Weighted IR stats (in expose as: per-class evaluation measures): }}\\
+\textcolor{red}{Expose has average fmeasure, average precision, average recall, per-class AUROC, per-class f-measure, per-class precision and per-class recall.\\
+It is NOT clear to me whether they are the same as the following! }
 \begin{enumerate}
-\item \textbf{weighted Area Under ROC: }
+\item \textbf{weighted Area Under ROC: } \textcolor{red}{Expose2}
           Calculates the weighted (by class size) AUC. 
 
 \item \textbf{weighted False Negative Rate: }
@@ -112,7 +115,7 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 \item \textbf{weighted False Positive Rate: }
           Calculates the weighted (by class size) false positive rate.                    
 
-\item \textbf{weighted FMeasure: }
+\item \textbf{weighted FMeasure: } \textcolor{red}{Expose2}
           Calculates the macro weighted (by class size) average F-Measure. 
                  
 \item \textbf{weighted Precision: }
@@ -129,7 +132,7 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 \end{enumerate}
      
 
-\item \textbf{\textcolor{red}{SF stats}}
+\item \textbf{\textcolor{blue}{SF stats}}
 \begin{enumerate}
               
 \item \textbf{SF Entropy Gain: }
@@ -157,7 +160,7 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 
 
 
-\item \textbf{\textcolor{red}{Sensitive stats - certainty of predictions}}
+\item \textbf{\textcolor{blue}{Sensitive stats - certainty of predictions}}
 \begin{enumerate}
 
 \item \textbf{relative Absolute Error: }
@@ -173,9 +176,9 @@ I have studied WEKA's source code and have worked out which metrics can be consi
           Returns the mean absolute error. 
 \end{enumerate}    
 
-\item  \textbf{\textcolor{red}{K\&B stats}}
+\item  \textbf{\textcolor{blue}{K\&B stats (in expose as: info based measures): }} \textcolor{red}{Expose2}
 \begin{enumerate}          
-\item \textbf{KB Information: }
+\item \textbf{KB Information: } 
           Return the total Kononenko \& Bratko Information score in bits. 
           
 \item \textbf{KB Mean Information: }
@@ -191,10 +194,10 @@ I have studied WEKA's source code and have worked out which metrics can be consi
           
 
 
-\item \textbf{avg Cost: }
+\item \textbf{avg Cost: } \textcolor{red}{Expose2}
           Gets the average cost, that is, total cost of misclassifications (incorrect plus unclassified) over the total number of instances.
 
-\item \textbf{confusion Matrix: }
+\item \textbf{confusion Matrix: } \textcolor{red}{Expose2}
           Returns a copy of the confusion matrix.
           
 
@@ -219,8 +222,8 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 %\item \textbf{equals(java.lang.Object obj)}
 %          Tests whether the current evaluation object is equal to another evaluation object.
           
-\item \textbf{error Rate: }
-          Returns the estimated error rate or the root mean squared error (if the class is numeric).
+\item \textbf{error Rate: } \textcolor{red}{Expose2}
+          Returns the estimated error rate or the root mean squared error (if the class is numeric). 
 
                     
 
@@ -236,7 +239,7 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 
 
           
-\item \textbf{matthews Correlation Coefficient [requires class index]: }
+\item \textbf{matthews Correlation Coefficient [requires class index]: } \textcolor{red}{Expose}
           Calculates the matthews correlation coefficient (sometimes called phi coefficient) for the supplied class
           
 
@@ -306,8 +309,34 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 
 \item Serialized\_Test\_Set\_Size
 	    
+
+
+\item  \textbf{\textcolor{blue}{From Expose}}
+\begin{enumerate}          
+\item \textbf{Balanced Classification Rate: }
+((TP / (TP + FN) + TN / (TN + FP)))/2\\
+Also known as HTER: Half Total Error Rate
+
+          
+\item \textbf{Discriminant Power }
+          normalised likelihood index, <1 = poor, >3 = good, fair otherwise. \\
+sqrt(3) / π . (log (sensitivity / (1 – specificity)) + log (specificity / (1 - sensitivity)))
+
+\item \textbf{Youden's Index: }  
+arithmetic mean between sensitivity and specificity.\\
+sensitivity - (1 - specificity)
+
+\item \textbf{Negative Likelihood: }  
+likelihood that a predicted negative is an actual negative.\\
+specificity / (1 - sensitivity)
+
+\item \textbf{Positive Likelihood: }  
+likelihood that a predicted positive is an actual positive.\\
+sensitivity / (1 - specificity)
+
 \end{enumerate}
 
+\end{enumerate}
 %\begin{enumerate}
 
     %\item Number\_of\_training\_instances
@@ -333,7 +362,7 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 	   %%% \item Root\_relative\_squared\_error - eval.rootRelativeSquaredError()	    	                        
     
     %\end{enumerate}
-    %\item SF stats  \textcolor{red}{SF stats}
+    %\item SF stats  \textcolor{blue}{SF stats}
     %\begin{enumerate}
 	    %%% \item SF\_prior\_entropy - eval.SFPriorEntropy()
 	   %%% \item SF\_scheme\_entropy - eval.SFSchemeEntropy()
@@ -343,14 +372,14 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 	   %%% \item SF\_mean\_entropy\_gain - eval.SFMeanEntropyGain()
 	        
    % \end{enumerate}
-    %\item K\&B stats \textcolor{red}{K\&B stats}
+    %\item K\&B stats \textcolor{blue}{K\&B stats}
     %\begin{enumerate}
 	  %%%  \item KB\_information -  eval.KBInformation()
 	  %%%  \item KB\_mean\_information - eval.KBMeanInformation()
 	  %%%  \item KB\_relative\_information - eval.KBRelativeInformation()
 
     %\end{enumerate}
-   % \item IR stats   \textcolor{red}{IR stats}
+   % \item IR stats   \textcolor{blue}{IR stats}
    % \begin{enumerate}
 	  %%%  \item True\_positive\_rate - eval.truePositiveRate(m\_IRclass)
 	    %%%\item Num\_true\_positives - eval.numTruePositives(m\_IRclass)
@@ -366,7 +395,7 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 	  %%%  \item Area\_under\_ROC -  eval.areaUnderROC(m\_IRclass)
 
    % \end{enumerate}
-    %\item Weighted IR stats \textcolor{red}{Weighted IR stats}
+    %\item Weighted IR stats \textcolor{blue}{Weighted IR stats}
     %\begin{enumerate}
 	 %%%   \item Weighted\_avg\_true\_positive\_rate - eval.weightedTruePositiveRate()
 	 %%%   \item Weighted\_avg\_false\_positive\_rate - eval.weightedFalsePositiveRate()
