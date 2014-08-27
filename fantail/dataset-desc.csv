@@ -1,0 +1,57 @@
+fantail name, expose name, expose definition, notes
+MeanMeansOfNumericAtts, , ,     
+MeanStdDevOfNumericAtts, , ,    
+MeanKurtosisOfNumericAtts, average_feature_kurtosis, , not sure they're the same!
+MeanSkewnessOfNumericAtts, average_feature_skewness, , not sure they're the same!
+NumAttributes, number_of_features, , 
+Dimensionality, dimensionality_of_the data, ratio of number of attributes and number of instances
+NumNominalAtts, number_of_nominal_features, , 
+NumNumericAtts, number_of_numerical_features, , 
+PercentageOfNominalAtts, percentage_of_nominal_features, , 
+PercentageOfNumericAtts, percentage_of_numerical_features, , 
+NumBinaryAtts, number_of_binary_features, , 
+PercentageOfBinaryAtts, , , 
+ClassCount, number_of_target_classes, , 
+PositivePercentage, , , 
+NegativePercentage, , , 
+DefaultAccuracy, , , 
+IncompleteInstanceCount, number_of_instances_with_missing_values, , 
+InstanceCount, number_of_instances, , 
+NumMissingValues, number_of_missing_values, , 
+PercentageOfMissingValues, percentage_of_missing_values, , 
+MaxNominalAttDistinctValues, , , 
+MinNominalAttDistinctValues, , , 
+MeanNominalAttDistinctValues, , , 
+StdvNominalAttDistinctValues, , , 
+ClassEntropy,target_feature_entropy , , not sure they're the same!
+MeanAttributeEntropy, , , 
+MeanMutualInformation, average_mutual_information, "expose defines mutual information as :the mutual information between nominal attributes X and Y describes the reduction in uncertainty of Y due to the knowledge of X, and leans on the conditional entropy H(Y |X). It is also the underlying measure of the information gain metric used in decision tree learners", 
+EquivalentNumberOfAtts, equivalent_number_of_attributes, "The equivalent number of attributes is a quick estimate of the number of attributes required, on average, to describe the class, EN−atrr = H(C)/MI(C, X)", 
+NoiseToSignalRatio, noise_to_signal_ratio, "The noise to signal ratio is an estimate of the amount of non-useful information in the attributes regarding the class. H(X) is the average information (useful or not) of the attributes. NS−ratio = (H(X) − MI(C, X))/MI(C, X)", 
+DecisionStumpErrRate, , , "Expose has a decision_stump_landmarker: Using a decision tree learner, C5.0 to be precise, a single decision node is constructed (representing a single split of the data) which is then to be used for classifying test observations. The goal of this landmark learner is to establish closeness to linear separability. NOT sure they're relevant"
+DecisionStumpAUC, , , "Expose has a decision_stump_landmarker: Using a decision tree learner, C5.0 to be precise, a single decision node is constructed (representing a single split of the data) which is then to be used for classifying test observations. The goal of this landmark learner is to establish closeness to linear separability. NOT sure they're relevant"
+NBErrRate, , , "Expose has a naive_bayes_landmarker: A simple learning algorithm using Bayes theorem to calculate the possibility that an observation belongs to a certain class. Since it assumes that the attributes are conditionally independent from each other, this landmarker is used to measure the extent to which the attributes actually are independent given the class. NOT sure they're relevant"
+NBAUC, , , "Expose has a naive_bayes_landmarker: A simple learning algorithm using Bayes theorem to calculate the possibility that an observation belongs to a certain class. Since it assumes that the attributes are conditionally independent from each other, this landmarker is used to measure the extent to which the attributes actually are independent given the class. NOT sure they're relevant"
+NBAUC, , , "Expose has a naive_bayes_landmarker: A simple learning algorithm using Bayes theorem to calculate the possibility that an observation belongs to a certain class. Since it assumes that the attributes are conditionally independent from each other, this landmarker is used to measure the extent to which the attributes actually are independent given the class. NOT sure they're relevant"
+NBAUC, , , "Expose has a naive_bayes_landmarker: A simple learning algorithm using Bayes theorem to calculate the possibility that an observation belongs to a certain class. Since it assumes that the attributes are conditionally independent from each other, this landmarker is used to measure the extent to which the attributes actually are independent given the class. NOT sure they're relevant"
+J48.00001.ErrRate, , , 
+J48.00001.AUC, , , 
+J48.0001.ErrRate, , , 
+J48.0001.AUC, , , 
+J48.001.ErrRate, , , 
+J48.001.AUC, , , 
+J48.00001.kappa, , , 
+J48.0001.kappa, , , 
+J48.001.kappa, , , 
+REPTreeDepth1ErrRate, , , 
+REPTreeDepth1AUC, , , 
+REPTreeDepth2ErrRate, , , 
+REPTreeDepth2AUC , , , 
+REPTreeDepth3ErrRate , , , 
+REPTreeDepth3AUC, , , 
+REPTreeDepth1Kappa, , , 
+REPTreeDepth2Kappa, , , 
+REPTreeDepth3Kappa, , , 
+RandomTreeDepth1AUC_K=0, , , "Expose has random_tree_landmarker: Also using decision trees, an attribute is chosen randomly at each node until the entire tree is built. The goal of this landmark learner is to inform about irrelevant attributes. NOT sure they're relevant"
+RandomTreeDepth2AUC_K=0, , , "Expose has random_tree_landmarker: Also using decision trees, an attribute is chosen randomly at each node until the entire tree is built. The goal of this landmark learner is to inform about irrelevant attributes. NOT sure they're relevant"
+RandomTreeDepth3AUC_K=0, , , "Expose has random_tree_landmarker: Also using decision trees, an attribute is chosen randomly at each node until the entire tree is built. The goal of this landmark learner is to inform about irrelevant attributes. NOT sure they're relevant"

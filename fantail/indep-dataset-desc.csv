@@ -1,0 +1,30 @@
+FANTAIL Name, EXPOSE Name, EXPOSE Definition, DMOP Name, DMOP Definition, Notes, FANTAIL Value
+MeanMeansOfNumericAtts, , , , , I think here they compute the mean of each numerical attribute and then compute the mean of those means, 11117.761485414243 
+MeanStdDevOfNumericAtts, , , , , I think here they compute the SD of each numerical attribute and then compute the mean of those SD's, 64436.16296355108
+MeanKurtosisOfNumericAtts, average_feature_kurtosis, , , , not sure they're the same!, 307.9460772322786
+MeanSkewnessOfNumericAtts, average_feature_skewness, , , , not sure they're the same!, 11.896453695739003
+NumAttributes, number_of_features, , NumberOfFeatures, , 26.0
+Dimensionality, dimensionality_of_the data, ratio of number of attributes and number of instances, , 0.01888162672476398
+NumNominalAtts, number_of_nominal_features, ,NumberOfCategoricalFeatures , , , 1.0
+NumNumericAtts, number_of_numerical_features, ,NumberOfContinuousFeatures , , , 24.0
+PercentageOfNominalAtts, percentage_of_nominal_features, , ProportionOfCategoricalFeatures, , , 0.038461538461538464
+PercentageOfNumericAtts, percentage_of_numerical_features, , , , , 0.9230769230769231
+NumBinaryAtts, number_of_binary_features, , , , , 0.0
+PercentageOfBinaryAtts, , , , , , 0.0
+ClassCount, number_of_target_classes, , NumberOfClasses, , I believe this is an indep feature (i.e. only dataset dependent), 4.0
+PositivePercentage, , , , , Proportion of points from +ve class, 0.002904865649963689
+NegativePercentage, , , , , Proportion of points from -ve class, 0.9745824255628177
+DefaultAccuracy, , , , , , 0.9745824255628177
+IncompleteInstanceCount, number_of_instances_with_missing_values, , , , DMOP has ProportionOfMissingValues, 0.0
+InstanceCount, number_of_instances, , NumberOfInstances, , , 1377.0
+NumMissingValues, number_of_missing_values, , NumberOfMissingValues, , , 0.0
+PercentageOfMissingValues, percentage_of_missing_values, , , , , 0.0
+MaxNominalAttDistinctValues, , , , , , 1377.0
+MinNominalAttDistinctValues, , , , , , 1377.0
+MeanNominalAttDistinctValues, , , , , , 1377.0
+StdvNominalAttDistinctValues, , , , , , 0.0
+ClassEntropy,target_feature_entropy , , ClassEntropy, METAL characteristic: Class entropy, not sure they're the same!, 0.19985248177523918
+MeanAttributeEntropy, , , AverageFeatureEntropy, METAL characteristic: Average feature Entropy, , , 10.4273128441348
+MeanMutualInformation, average_mutual_information, "expose defines mutual information as :the mutual information between nominal attributes X and Y describes the reduction in uncertainty of Y due to the knowledge of X, and leans on the conditional entropy H(Y |X). It is also the underlying measure of the information gain metric used in decision tree learners", , , , 0.1998524817752365
+EquivalentNumberOfAtts, equivalent_number_of_attributes, "The equivalent number of attributes is a quick estimate of the number of attributes required, on average, to describe the class, EN−atrr = H(C)/MI(C, X)", AverageMutualInformation, METAL characteristic: Average mutual information, , 1.0000000000000133
+NoiseToSignalRatio, noise_to_signal_ratio, "The noise to signal ratio is an estimate of the amount of non-useful information in the attributes regarding the class. H(X) is the average information (useful or not) of the attributes. NS−ratio = (H(X) − MI(C, X))/MI(C, X)", NoiseSignalRatio, METAL characteristic: Noise signal ratio, , 51.17504807301741

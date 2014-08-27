@@ -1,0 +1,28 @@
+FANTAIL Name, EXPOSE Name, EXPOSE Definition, DMOP Name, DMOP Definition, Notes, FANTAIL Value
+DecisionStumpErrRate, , ,  , , "Expose has a decision_stump_landmarker: Using a decision tree learner, C5.0 to be precise, a single decision node is constructed (representing a single split of the data) which is then to be used for classifying test observations. The goal of this landmark learner is to establish closeness to linear separability. NOT sure they're relevant", 1.1619462599854757
+DecisionStumpAUC, , ,  , , "Expose has a decision_stump_landmarker: Using a decision tree learner, C5.0 to be precise, a single decision node is constructed (representing a single split of the data) which is then to be used for classifying test observations. The goal of this landmark learner is to establish closeness to linear separability. NOT sure they're relevant", 0.7780435928806371
+NBErrRate, , ,  , , "Expose has a naive_bayes_landmarker: A simple learning algorithm using Bayes theorem to calculate the possibility that an observation belongs to a certain class. Since it assumes that the attributes are conditionally independent from each other, this landmarker is used to measure the extent to which the attributes actually are independent given the class. NOT sure they're relevant", 3.2679738562091503
+NBAUC, , ,  , , "Expose has a naive_bayes_landmarker: A simple learning algorithm using Bayes theorem to calculate the possibility that an observation belongs to a certain class. Since it assumes that the attributes are conditionally independent from each other, this landmarker is used to measure the extent to which the attributes actually are independent given the class. NOT sure they're relevant", 0.9705487614669288
+NBAUC, , ,  , , "Expose has a naive_bayes_landmarker: A simple learning algorithm using Bayes theorem to calculate the possibility that an observation belongs to a certain class. Since it assumes that the attributes are conditionally independent from each other, this landmarker is used to measure the extent to which the attributes actually are independent given the class. NOT sure they're relevant", 0.7239201533776912
+NBAUC, , ,  , , "Expose has a naive_bayes_landmarker: A simple learning algorithm using Bayes theorem to calculate the possibility that an observation belongs to a certain class. Since it assumes that the attributes are conditionally independent from each other, this landmarker is used to measure the extent to which the attributes actually are independent given the class. NOT sure they're relevant", 0.5480537098762285
+J48.00001.ErrRate, , ,  , , , 0.8714596949891068
+J48.00001.AUC, , ,  , , , 0.9257956085446931
+J48.0001.ErrRate, , ,  , , , 0.8714596949891068
+J48.0001.AUC, , ,  , , , 0.9257956085446931
+J48.001.ErrRate, , ,  , , , 0.8714596949891068
+J48.001.AUC, , ,  , , , 0.9257956085446931
+J48.00001.kappa, , ,  , , , 0.8090682196339435
+J48.0001.kappa, , ,  , , , 0.8090682196339435
+J48.001.kappa, , ,  , , , 0.8090682196339435
+REPTreeDepth1ErrRate, , ,  , , , 2.541757443718228
+REPTreeDepth1AUC, , ,  , , , 0.4928558193829067
+REPTreeDepth2ErrRate, , ,  , , , 2.541757443718228
+REPTreeDepth2AUC , , ,  , , , 0.4928558193829067
+REPTreeDepth3ErrRate , , ,  , , , 2.541757443718228
+REPTreeDepth3AUC, , ,  , , , 0.4928558193829067
+REPTreeDepth1Kappa, , ,  , , , 0.0
+REPTreeDepth2Kappa, , ,  , , , 0.0
+REPTreeDepth3Kappa, , ,  , , , 0.0
+RandomTreeDepth1AUC_K=0, , ,  , , "Expose has random_tree_landmarker: Also using decision trees, an attribute is chosen randomly at each node until the entire tree is built. The goal of this landmark learner is to inform about irrelevant attributes. NOT sure they're relevant", 0.8029904264704076
+RandomTreeDepth2AUC_K=0, , ,  , , "Expose has random_tree_landmarker: Also using decision trees, an attribute is chosen randomly at each node until the entire tree is built. The goal of this landmark learner is to inform about irrelevant attributes. NOT sure they're relevant", 0.9259106540411655
+RandomTreeDepth3AUC_K=0, , ,  , , "Expose has random_tree_landmarker: Also using decision trees, an attribute is chosen randomly at each node until the entire tree is built. The goal of this landmark learner is to inform about irrelevant attributes. NOT sure they're relevant", 0.8955028532482424

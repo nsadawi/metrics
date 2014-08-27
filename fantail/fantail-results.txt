@@ -1,0 +1,84 @@
+Statistical:
+MeanMeansOfNumericAtts	Value = 11117.761485414243
+MeanStdDevOfNumericAtts	Value = 64436.16296355108
+MeanKurtosisOfNumericAtts	Value = 307.9460772322786
+MeanSkewnessOfNumericAtts	Value = 11.896453695739003
+
+AttributeCount:
+NumAttributes	Value = 26.0
+Dimensionality	Value = 0.01888162672476398
+
+AttributeType:
+NumNominalAtts	Value = 1.0
+NumNumericAtts	Value = 24.0
+PercentageOfNominalAtts	Value = 0.038461538461538464
+PercentageOfNumericAtts	Value = 0.9230769230769231
+NumBinaryAtts	Value = 0.0
+PercentageOfBinaryAtts	Value = 0.0
+
+ClassAtt:
+ClassCount	Value = 4.0
+PositivePercentage	Value = 0.002904865649963689
+NegativePercentage	Value = 0.9745824255628177
+
+DefaultAccuracy:
+DefaultAccuracy	Value = 0.9745824255628177
+
+IncompleteInstanceCount:
+IncompleteInstanceCount	Value = 0.0
+
+InstanceCount:
+InstanceCount	Value = 1377.0
+
+MissingValues:
+NumMissingValues	Value = 0.0
+PercentageOfMissingValues	Value = 0.0
+
+NominalAttDistinctValues:
+MaxNominalAttDistinctValues	Value = 1377.0
+MinNominalAttDistinctValues	Value = 1377.0
+MeanNominalAttDistinctValues	Value = 1377.0
+StdvNominalAttDistinctValues	Value = 0.0
+
+AttributeEntropy:
+ClassEntropy	Value = 0.19985248177523918
+MeanAttributeEntropy	Value = 10.4273128441348
+MeanMutualInformation	Value = 0.1998524817752365
+EquivalentNumberOfAtts	Value = 1.0000000000000133
+NoiseToSignalRatio	Value = 51.17504807301741
+
+SimpleLandmarkers:
+DecisionStumpErrRate	Value = 1.1619462599854757
+DecisionStumpAUC	Value = 0.7780435928806371
+NBErrRate	Value = 3.2679738562091503
+NBAUC	Value = 0.9705487614669288
+NBAUC	Value = 0.7239201533776912
+NBAUC	Value = 0.5480537098762285
+
+J48BasedLandmarker:
+J48.00001.ErrRate	Value = 0.8714596949891068
+J48.00001.AUC	Value = 0.9257956085446931
+J48.0001.ErrRate	Value = 0.8714596949891068
+J48.0001.AUC	Value = 0.9257956085446931
+J48.001.ErrRate	Value = 0.8714596949891068
+J48.001.AUC	Value = 0.9257956085446931
+J48.00001.kappa	Value = 0.8090682196339435
+J48.0001.kappa	Value = 0.8090682196339435
+J48.001.kappa	Value = 0.8090682196339435
+
+REPTreeBasedLandmarker:
+REPTreeDepth1ErrRate	Value = 2.541757443718228
+REPTreeDepth1AUC	Value = 0.4928558193829067
+REPTreeDepth2ErrRate	Value = 2.541757443718228
+REPTreeDepth2AUC	Value = 0.4928558193829067
+REPTreeDepth3ErrRate	Value = 2.541757443718228
+REPTreeDepth3AUC	Value = 0.4928558193829067
+REPTreeDepth1Kappa	Value = 0.0
+REPTreeDepth2Kappa	Value = 0.0
+REPTreeDepth3Kappa	Value = 0.0
+
+RandomTreeBasedLandmarker:
+RandomTreeDepth1AUC_K=0	Value = 0.8029904264704076
+RandomTreeDepth2AUC_K=0	Value = 0.9259106540411655
+RandomTreeDepth3AUC_K=0	Value = 0.8955028532482424
+
