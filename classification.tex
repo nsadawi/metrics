@@ -50,56 +50,102 @@ I have studied WEKA's source code and have worked out which metrics can be consi
 \item \textbf{pct Incorrect: }
           Gets the percentage of instances incorrectly classified (that is, for which an incorrect prediction was made).
 
-\item \textbf{pct Unclassified: }
-          Gets the percentage of instances not classified (that is, for which no prediction was made by the classifier). 
-
 \item \textbf{Incorrect: }
           Gets the number of instances incorrectly classified (that is, for which an incorrect prediction was made). 
           
-\item \textbf{Kappa: } \textcolor{red}{Expose2}
-          Returns value of kappa statistic if class is nominal. 
+\item \textbf{pct Unclassified: }
+          Gets the percentage of instances not classified (that is, for which no prediction was made by the classifier). 
+
+
           
-\item \textbf{Unclassified: }
-          Gets the number of instances not classified (that is, for which no prediction was made by the classifier).
+          
+
+          
 \end{enumerate}    
 
-\item  \textbf{\textcolor{blue}{IR stats}}
+
+
+
+\item  \textbf{\textcolor{blue}{IR stats}} \textcolor{red}{Expose2 class\_prediction\_evaluation\_measure}
 \begin{enumerate}          
-\item \textbf{Area Under ROC  [requires class index]: } \textcolor{red}{Expose2}
-          Returns the area under ROC for those predictions that have been collected in the evaluateClassifier(Classifier, Instances) method. 
+   \item \textbf{Kappa: } \textcolor{red}{Expose2 kappa\_statistic}
+          Returns value of kappa statistic if class is nominal. 
+
+\item \textbf{Unclassified: } \textcolor{red}{Expose2 number\_of\_unclassified\_instances} 
+          Gets the number of instances not classified (that is, for which no prediction was made by the classifier).
+          
+\item \textbf{total Cost: }  \textcolor{red}{Expose2 total\_cost}
+          Gets the total cost, that is, the cost of each prediction times the weight of the instance, summed over all instances.      
+
+\item \textbf{avg Cost: } \textcolor{red}{Expose2 average\_cost}
+          Gets the average cost, that is, total cost of misclassifications (incorrect plus unclassified) over the total number of instances.               
+
+\item \textbf{confusion Matrix: } \textcolor{red}{Expose2 confusion\_matrix}
+          Returns a copy of the confusion matrix.                         
+          
+\item \textbf{error Rate: } \textcolor{red}{Expose2 error\_rate}
+          Returns the estimated error rate or the root mean squared error (if the class is numeric). 
+
+\end{enumerate} 
+
+
+
+
+
+\item  \textbf{\textcolor{blue}{IR stats}} \textcolor{red}{Expose2 primitive\_evaluation\_measure}
+\begin{enumerate}          
+          
+\item \textbf{num True Negatives [requires class index]: } \textcolor{red}{Expose2 number\_of\_true\_negatives}
+          Calculate the number of true negatives with respect to a particular class.
+          
+\item \textbf{num True Positives [requires class index]: } \textcolor{red}{Expose2 number\_of\_true\_positives}
+          Calculate the number of true positives with respect to a particular class. 
+
+\item \textbf{num FalseNegatives [requires class index]: } \textcolor{red}{Expose2 number\_of\_false\_negatives}
+          Calculate number of false negatives with respect to a particular class. 
+          
+\item \textbf{num False Positives [requires class index]: } \textcolor{red}{Expose2 number\_of\_false\_positives}
+          Calculate number of false positives with respect to a particular class. 
+          
+          
+\end{enumerate}    
+
+\item  \textbf{\textcolor{blue}{IR stats}} \textcolor{red}{Expose2 binary\_prediction\_evaluation\_measure}
+\begin{enumerate}          
+\item \textbf{Area Under ROC  [requires class index]: } \textcolor{red}{Expose2 area\_under\_the\_ROC\_curve}
+          Returns the area under ROC for those predictions that have been collected in the evaluateClassifier(Classifier, Instances) method.           
+          
+\item \textbf{precision [requires class index]: } \textcolor{red}{Expose2 precision}
+          Calculate the precision with respect to a particular class.      
+          
+\item \textbf{recall [requires class index]: } \textcolor{red}{Expose2 recall}
+          Calculate the recall with respect to a particular class. 
+          
+\item \textbf{true Negative Rate (specificity:)   [requires class index]: } \textcolor{red}{Expose2 specificity} 
+          Calculate the true negative rate with respect to a particular class.
+          
+\item \textbf{true Positive Rate (sensitivity) [requires class index]  } \textcolor{red}{Expose2 recall} 
+          Calculate the true positive rate with respect to a particular class.
+
+\item \textbf{fMeasure [requires class index]: } \textcolor{red}{Expose f-measure}
+          Calculate the F-Measure with respect to a particular class.    
+          
+\item \textbf{matthews Correlation Coefficient [requires class index]: } \textcolor{red}{Expose Matthews\_correlation}
+          Calculates the matthews correlation coefficient (sometimes called phi coefficient) for the supplied class                
+\end{enumerate}     
+
+
+
+\item  \textbf{\textcolor{blue}{IR stats}} %binary_prediction_evaluation_measure
+\begin{enumerate}          
+
           
 \item \textbf{false Negative Rate [requires class index]: }
           Calculate the false negative rate with respect to a particular class. 
           
 \item \textbf{false Positive Rate [requires class index]: }
-          Calculate the false positive rate with respect to a particular class. 
-          
-\item \textbf{fMeasure [requires class index]: } \textcolor{red}{Expose}
-          Calculate the F-Measure with respect to a particular class.
-          
-\item \textbf{num True Negatives [requires class index]: } \textcolor{red}{Expose2}
-          Calculate the number of true negatives with respect to a particular class.
-          
-\item \textbf{num True Positives [requires class index]: } \textcolor{red}{Expose2}
-          Calculate the number of true positives with respect to a particular class. 
+          Calculate the false positive rate with respect to a particular class.           
 
-\item \textbf{num FalseNegatives [requires class index]: } \textcolor{red}{Expose2}
-          Calculate number of false negatives with respect to a particular class. 
-          
-\item \textbf{num False Positives [requires class index]: } \textcolor{red}{Expose2}
-          Calculate number of false positives with respect to a particular class. 
-          
-\item \textbf{precision [requires class index]: } \textcolor{red}{Expose2}
-          Calculate the precision with respect to a particular class.      
-          
-\item \textbf{recall [requires class index]: } \textcolor{red}{Expose2}
-          Calculate the recall with respect to a particular class. 
-          
-\item \textbf{true Negative Rate (specificity:)   [requires class index]: } \textcolor{red}{Expose2} 
-          Calculate the true negative rate with respect to a particular class.
-          
-\item \textbf{true Positive Rate [requires class index]: }
-          Calculate the true positive rate with respect to a particular class.
 \end{enumerate}     
 
 \item \textbf{\textcolor{blue}{Weighted IR stats (in expose as: per-class evaluation measures): }}\\
@@ -115,7 +161,7 @@ It is NOT clear to me whether they are the same as the following! }
 \item \textbf{weighted False Positive Rate: }
           Calculates the weighted (by class size) false positive rate.                    
 
-\item \textbf{weighted FMeasure: } \textcolor{red}{Expose2}
+\item \textbf{weighted FMeasure: } \textcolor{red}{Expose2 weighted\_f-measure}
           Calculates the macro weighted (by class size) average F-Measure. 
                  
 \item \textbf{weighted Precision: }
@@ -160,31 +206,42 @@ It is NOT clear to me whether they are the same as the following! }
 
 
 
-\item \textbf{\textcolor{blue}{Sensitive stats - certainty of predictions}}
+\item \textbf{\textcolor{blue}{Sensitive stats - certainty of predictions}}  \textcolor{red}{Expose2 class\_probability-based\_evaluation\_measure}
 \begin{enumerate}
 
-\item \textbf{relative Absolute Error: }
+\item \textbf{relative Absolute Error: }  \textcolor{red}{Expose2 relative\_absolute\_error}  
           Returns the relative absolute error. 
 
-\item \textbf{root Mean Squared Error: }
+\item \textbf{root Mean Squared Error: }   \textcolor{red}{Expose2 root\_mean-squared\_error}  
           Returns the root mean squared error.           
 
-\item \textbf{root Relative Squared Error: }
+\item \textbf{root Relative Squared Error: } \textcolor{red}{Expose2 root\_relative\_squared\_error}   
           Returns the root relative squared error if the class is numeric. 
                     
-\item \textbf{mean Absolute Error: }
+\item \textbf{mean Absolute Error: } \textcolor{red}{Expose2 mean\_absolute\_error} 
           Returns the mean absolute error. 
 \end{enumerate}    
 
-\item  \textbf{\textcolor{blue}{K\&B stats (in expose as: info based measures): }} \textcolor{red}{Expose2}
+
+\item \textcolor{red}{Expose2 numeric\_prediction\_evaluation\_measure}
+\begin{enumerate}
+\item \textbf{correlation Coefficient: } \textcolor{red}{Expose2 correlation\_coefficient}
+          Returns the correlation coefficient if the class is numeric.
+
+\end{enumerate}    
+
+
+
+
+\item  \textbf{\textcolor{blue}{K\&B stats (in expose as: info based measures): }} \textcolor{red}{Expose2 information-based\_measures}
 \begin{enumerate}          
-\item \textbf{KB Information: } 
+\item \textbf{KB Information: }   \textcolor{red}{Expose2 Kononenko-Bratko\_information\_score} 
           Return the total Kononenko \& Bratko Information score in bits. 
           
-\item \textbf{KB Mean Information: }
+\item \textbf{KB Mean Information: } \textcolor{red}{Expose2 Kononenko-Bratko\_average\_information\_score}
           Return the Kononenko \& Bratko Information score in bits per instance. 
           
-\item \textbf{KB Relative Information: }
+\item \textbf{KB Relative Information: } \textcolor{red}{Expose2 Kononenko-Bratko\_relative\_information\_score}
           Return the Kononenko \& Bratko Relative Information score.
 \end{enumerate}
 
@@ -194,18 +251,15 @@ It is NOT clear to me whether they are the same as the following! }
           
 
 
-\item \textbf{avg Cost: } \textcolor{red}{Expose2}
-          Gets the average cost, that is, total cost of misclassifications (incorrect plus unclassified) over the total number of instances.
 
-\item \textbf{confusion Matrix: } \textcolor{red}{Expose2}
-          Returns a copy of the confusion matrix.
+
+
           
 
           
 
           
-\item \textbf{correlation Coefficient: }
-          Returns the correlation coefficient if the class is numeric.
+
           
 \item \textbf{coverage Of Test Cases By Predicted Regions: }
           Gets the coverage of the test cases by the predicted regions at the confidence level specified when evaluation was performed.
@@ -222,8 +276,7 @@ It is NOT clear to me whether they are the same as the following! }
 %\item \textbf{equals(java.lang.Object obj)}
 %          Tests whether the current evaluation object is equal to another evaluation object.
           
-\item \textbf{error Rate: } \textcolor{red}{Expose2}
-          Returns the estimated error rate or the root mean squared error (if the class is numeric). 
+
 
                     
 
@@ -239,8 +292,7 @@ It is NOT clear to me whether they are the same as the following! }
 
 
           
-\item \textbf{matthews Correlation Coefficient [requires class index]: } \textcolor{red}{Expose}
-          Calculates the matthews correlation coefficient (sometimes called phi coefficient) for the supplied class
+
           
 
           
@@ -274,8 +326,7 @@ It is NOT clear to me whether they are the same as the following! }
 \item \textbf{size Of Predicted Regions: }
           Gets the average size of the predicted regions, relative to the range of the target in the training data, at the confidence level specified when evaluation was performed
 
-\item \textbf{total Cost: }
-          Gets the total cost, that is, the cost of each prediction times the weight of the instance, summed over all instances.                   
+             
 
 \item \textbf{unweighted Macro Fmeasure: }
           Unweighted macro-averaged F-measure.
