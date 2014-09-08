@@ -1,0 +1,81 @@
+Source,Name of Descriptor,Definition,Formula
+Expose,dimensionality_of_the_data,,
+Expose,number_of_features,simple count of number of features in the dataset,Count(features)
+Expose,number_of_instances,simple count of number of instance in the dataset,Count(instances)
+Expose,number_of_instances_with_missing_values,simple count of number of instances with missing values in the dataset,count instances which have missing data values 
+Expose,number_of_target_classes,simple count of number of classes in the dataset,Count(distinct classes)
+Expose,percentage_of_features_with_outliers,simple computation of percentage of features with outliers,Count(features with outliers)/Count(features)
+Expose,percentage_of_missing_values,simple computation of percentage of missing values,Count(number of missing values)/Count(all values)
+Expose,percentage_of_nominal_features,simple computation of percentage of nominal features,Count(nominal features)/Count(features)
+Expose,percentage_of_numerical_features,simple computation of percentage of numerical features,Count(numerical features)/Count(features)
+Expose,percentage_of_binary_features,simple computation of percentage of binary features,Count(binary features)/Count(features)
+Expose,presence_of_outliers_in_target,Not sure,
+Expose,average_correlation_to_target,Measures the correlation between a numerical attribute X and a numerical target Y,
+Expose,average_feature_kurtosis,,
+Expose,average_feature_skewness,,
+Expose,average_p-value_for_target,measures the correlation between a nominal attribute X and a numerical target Y,
+Expose,Box's_M_statistic,"Box's M-statistic measures the equality of the covariance matrices $S_{i}$ of the different classes. If they are equal, then linear discriminants could be used, otherwise, quadratic discriminant functions should be used instead. As such, $M$ predicts whether a linear discriminant algorithm should be used or not", "In the following, $S_{i}=\frac{S_{c_{i}}}{n_{i}-1}$ is the $i$ class covariance matrix with $S_{c_{i}}$ the $i$ class scatter matrix and $n_{i}$ the number of examples pertaining to class $i$, and $S=\frac{1}{n-cl}\sum_{i}S_{c_{i}}$ the pooled covariance matrix. It is zero when all individual covariance matrices are equal to the pooled covariance matrix. \begin{eqnarray} M&=&\gamma\sum_{i}(n_{i}-1)log\frac{|S|}{|S_{i}|} \\ \gamma&=&1-\frac{2num^{2}+3num-1}{6(num+1)(cl-1)}(\sum_{i}\frac{1}{n_{i}-1}-\frac{1}{n-cl}) \end{eqnarray}"
+Expose,first_canonical_correlation,"the first canonical correlation coefficient measures the association between all numerical attributes and a nominal (class) attribute. In principal component analysis (PCA), datasets are transformed into a new dataset with fewer dimensions (attributes). The first dimension, called the first principal component is a new axis in the direction of maximum variance. The variance of this principal axis is given by the largest eigenvalue $\lambda_{1}$. It thus measures how well the classes can be separated by the numerical attributes.","\begin{equation} \rho_{max}=\sqrt{\frac{\lambda_{1}}{1+\lambda_{1}}} \end{equation}"
+Expose,frac1,"the fraction of the total variance retained in the 1-dimensional space defined by the first principal component can be computed as the ratio between the largest eigenvalue $\lambda_{1}$ of the covariance matrix S and the sum of all its eigenvalues:","\begin{equation} frac1=\frac{\lambda_{1}}{\sum_{i}\lambda_{i}} \end{equation}"
+Expose,SD-ratio,"SD-ratio, the standard deviation ratio, is a reexpression of Box's M-statistic $M$ which is one if $M$ is zero and strictly greater than one if the covariances differ.", "\begin{equation} SD\mbox{-}ratio=exp(\frac{M}{num\sum_{i}(n_{i}-1)}) \end{equation}"
+Expose,stationarity_of_target,Indicates whether the standard deviation of the target feature is larger that its mean,
+Expose,target_feature_kurtosis,
+Expose,target_feature_skewness,
+Expose,average_mutual_information,
+Expose,coefficient_of_variation_of_target,"The coefficient of variation of the target is defined as the ratio of the standard deviation to the mean of the target attribute and can be used instead of entropy on numerical targets. It is a normalization of the standard deviation of the target useful for numerical targets $X_{target}$. A related measure, \emph{sparsity of the target}, is $VarCoef_{target}$ discretized into 3 values.","\begin{equation} VarCoef_{target}=\frac{\sigma_{X}}{\mu_{X}} \end{equation}"
+Expose,equivalent_number_of_attributes,"The equivalent number of attributes is a quick estimate of the number of attributes required, on average, to describe the class.","\begin{equation} EN-atrr=\frac{H(C)}{\overline{MI(C,X)}} \end{equation}"
+Expose,median_of_uncertainty_coefficients,
+Expose,noise_to_signal_ratio,"The noise to signal ratio is an estimate of the amount of non-useful information in the attributes regarding the class. $\overline{H(X)}$ is the average information (useful or not) of the attributes.","\begin{equation} NS-ratio=\frac{\overline{H(X)}-\overline{MI(C,X)}}{\overline{MI(C,X)}} \end{equation}"
+Expose,target_feature_entropy,
+Expose,instance_consistency,"A single example is consistent within the dataset if and only if there does not exist any other example that is identical, but has a different target value",
+Expose,instance_incoherence,"Incoherence is a measure for how dissimilar the examples are in their attribute space. An example is called incoherent within a dataset if it does not overlap with any other example in a predefined number δ of attributes.",
+Expose,instance_minimality,"An example is subsumed by another example if its attributes form a true subset of another example with the same label. It is useful mostly for relational representations. An example that is not subsumed by another example is minimal.",
+Expose,instance_similarity,"The overall similarity of examples in a dataset is defined as the normalized weighted sum of four different local similarity measures",
+Expose,instance_uniqueness,"An example is unique if and only if there does not exist another identical example.",
+DMOP,AverageAbsoluteFeatureCorrelation,"METAL characteristic: Average absolute correlation between continuous features.",
+DMOP,AverageCategoricalFeaturePairsMutualInformation,"METAL characteristic: Average mutual information between pairs of categorical features. ",
+DMOP,AverageFeatureEntropy,"METAL characteristic: Average feature Entropy",
+DMOP,BetweenGroupsSumSquaresCrossProducts,"METAL characteristic: A matrix containing the difference between the matrix of total and the matrix of within-groups sums of squares and cross products.",
+DMOP,EigenValuesLinearDiscriminantFunctions,"METAL characteristic: A vector of eigen values of linear discriminant functions.",
+DMOP,NumberOfHOutliers,"METAL characteristic: Number of continuous features with outliers.",
+DMOP,NumberOfInstancesPerFeature,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006. ",
+DMOP,TotalSumSquaresCrossProducts,"METAL characteristic: Matrix of total sums of squares and cross products of features.",
+DMOP,WithinGroupsSumSquaresCrossProducts,"METAL characteristic: matrix of within-groups sums of squares and cross products of features. ",
+DMOP,AverageSVMFeatureWeight,,
+DMOP,AverageReliefFeatureWeight,,
+DMOP,CanonicalCorrelationBestLinearCombination,"METAL characteristic: Canonical correlation of the best linear combination of features to distinguish between classes.",
+DMOP,ClassAbsoluteFrequencies,"METAL characteristic: Absolute class frequencies. Stored in a vector indexed by each class value.",
+DMOP,ClassCovarianceMatrices,"METAL characteristic: Class covariance matrices. Stored in a vector indexed by class and each containing a matrix of (features x features)",
+DMOP,ClassRelativeFrequencies,"METAL characteristic: Relative class frequencies. Stored in a vector indexed by each class value.",
+DMOP,ErrorRateOf1NNClassifier,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+DMOP,ErrorRateOfLinearClassifierLP,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+DMOP,FeatureValueFrequenciesPerClass,"METAL characteristic: For each k value of each j categorical feature and each i class, the proportion of cases that have the k value in the j feature and belong to the i class. It is stored in a vector indexed by each categorical feature and containing a flat contingency tables that combine the values of the categorical feature with the class values. ",
+DMOP,MaximumFeatureEfficiency,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+DMOP,MaximumFishersDiscriminantRatio,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+DMOP,MinimumSumOfErrorDistanceByLP,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+DMOP,NonLinearityOf1NNClassifier,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+DMOP,ProportionPointsWithRetainedAdherence,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+DMOP,RatioOfAverageIntraInterDistances,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+DMOP,VolumeOfOverlapRegion,"From Mitra Basu and Tin Kam Ho. Data Complexity in Pattern Recognition. Springer, 2006.",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
