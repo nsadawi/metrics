@@ -8,3 +8,4 @@ There also have several examples and experimental results to demonstrate their u
 The example results are in eve_ds/ and chembl_ds/
 
 
+metrics.csv is a csv file containing list of metrics, their source, definition and formulas (8/9/14)
