@@ -1,3 +1,11 @@
+By NS:
+- This is an R package so it will be straight-forward to use
+- It computes various descriptors and it has many similarity measures
+- It comes with 35 datasets of precomputed descriptors for 20 amino acids
+- The graphml file (display and edit with yEd) lists everything and gives brief dexplanation!
+
+
+======================== From ProtR Documentation ===========================
 The protr package focus on offering a unique and comprehensive toolkit for protein sequence descriptor calculation and similarity computation. 
 
 The descriptors included in the protr package are extensively utilized in Bioinformatics and Chemogenomics research. 
