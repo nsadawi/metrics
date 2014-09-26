@@ -1,0 +1,57 @@
+Metric, Explanation
+MeanSkewnessOfNumericAtts, computes the mean skewness of numeric attributes
+MeanKurtosisOfNumericAtts,  computes the mean kurtosis of numeric attributes
+MeanStdDevOfNumericAtts, computes the mean std deviation of numeric attributes
+MeanMeansOfNumericAtts, computes the mean of means of numeric attributes
+NumAttributes, computes the number of attributes
+Dimensionality, computes the dimensionality of the dataset
+PercentageOfBinaryAtts, computes the percentage of binary attributes in the dataset
+PercentageOfNominalAtts, computes the percentage of nominal attributes in the dataset
+NumNominalAtts, computes the number of nominal attributes in the dataset
+PercentageOfNumericAtts, computes the percentage of numerical attributes in the dataset
+NumNumericAtts, computes the number of numeric attributes in the dataset
+NumBinaryAtts, computes the number of binary attributes in the dataset
+ClassCount, computes the number of distinct classes in the dataset (assumes class is last variable)
+NegativePercentage, computes the percentage of -ve classes in the dataset
+PositivePercentage, computes the percentage of +ve classes in the dataset
+DefaultAccuracy, computes the default accuracy XX what exactly is it?
+IncompleteInstanceCount, computes the number of incomplete instances
+InstanceCount, computes the number of instances
+NumMissingValues, computes the number of missing values
+PercentageOfMissingValues, computes the percentage of missing values
+MeanNominalAttDistinctValues, computes the Mean of Distinct Values of Nominal Attributes
+StdvNominalAttDistinctValues, computes the std deviation of Distinct Values of Nominal Attributes
+MinNominalAttDistinctValues, computes the min value of Distinct Values of Nominal Attributes
+MaxNominalAttDistinctValues, computes the max value of Distinct Values of Nominal Attributes
+ClassEntropy, computes the class entropy
+MeanMutualInformation, computes the mean mutual information
+NoiseToSignalRatio, computes the noise to signal ratio
+MeanAttributeEntropy, computes the mean entropy of attributes
+EquivalentNumberOfAtts, computes the equivalent number of attributes
+NBKappa, computes the kappa statistic after running NB on this dataset
+NBErrRate, computes the error rate after running NB on this dataset
+NBAUC, computes the area under ROC curve after running NB on this dataset
+DecisionStumpAUC, computes the area under ROC curve after running decision stump on this dataset
+DecisionStumpKappa, computes the kappa statistic after running decision stump on this dataset
+DecisionStumpErrRate, computes the error rate after running decision stump on this dataset
+J48.00001.kappa, computes the kappa statistic after running J48 Decision Tree with Confidence 0.00001 on this dataset
+J48.00001.AUC, computes the area under ROC curve after running J48 Decision Tree with Confidence 0.00001 on this dataset
+J48.00001.ErrRate, computes the error rate after running J48 Decision Tree with Confidence 0.00001 on this dataset
+J48.001.AUC, computes the area under ROC curve after running J48 Decision Tree with Confidence 0.001 on this dataset
+J48.001.kappa, computes the kappa statistic after running J48 Decision Tree with Confidence 0.001 on this dataset
+J48.001.ErrRate, computes the error rate after running J48 Decision Tree with Confidence 0.001 on this dataset
+J48.0001.ErrRate, computes the error rate after running J48 Decision Tree with Confidence 0.0001 on this dataset
+J48.0001.kappa, computes the kappa statistic after running J48 Decision Tree with Confidence 0.0001 on this dataset
+J48.0001.AUC, computes the area under ROC curve after running J48 Decision Tree with Confidence 0.0001 on this dataset
+REPTreeDepth2AUC, computes the area under ROC curve after running REPTree with depth 2 on this dataset
+REPTreeDepth1AUC, computes the area under ROC curve after running REPTree with depth 1 on this dataset
+REPTreeDepth2ErrRate, computes the error rate after running REPTree with depth 2 on this dataset
+REPTreeDepth3ErrRate, computes the error rate after running REPTree with depth 3 on this dataset
+REPTreeDepth1Kappa, computes the kappa statistic after running REPTree with depth 1 on this dataset
+REPTreeDepth3AUC, computes the area under ROC curve after running REPTree with depth 3 on this dataset
+REPTreeDepth3Kappa, computes the kappa statistic after running REPTree with depth 3 on this dataset
+REPTreeDepth2Kappa, computes the kappa statistic after running REPTree with depth 2 on this dataset
+REPTreeDepth1ErrRate, computes the error rate after running REPTree with depth 1 on this dataset
+RandomTreeDepth2AUC_K=0, computes the area under ROC curve after running RandomTree with depth 2 on this dataset
+RandomTreeDepth3AUC_K=0, computes the area under ROC curve after running RandomTree with depth 3 on this dataset
+RandomTreeDepth1AUC_K=0, computes the area under ROC curve after running RandomTree with depth 1 on this dataset
