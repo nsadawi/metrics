@@ -14,7 +14,7 @@ NumBinaryAtts, computes the number of binary attributes in the dataset
 ClassCount, computes the number of distinct classes in the dataset (assumes class is last variable)
 NegativePercentage, computes the percentage of -ve classes in the dataset
 PositivePercentage, computes the percentage of +ve classes in the dataset
-DefaultAccuracy, computes the default accuracy
+DefaultAccuracy, computes the default accuracy (The percentage of instances which classes are the same as the mean|mode class value)
 IncompleteInstanceCount, computes the number of incomplete instances
 InstanceCount, computes the number of instances
 NumMissingValues, computes the number of missing values
