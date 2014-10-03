@@ -4,7 +4,7 @@ dataset.features<-function()
   # java exec name
   exec="DatasetMetaFeatures" 
   # exact path to dataset
-  dataset="~/mygit/metrics/graphs/eve_ds/TS3-Labeled.csv"
+  dataset="~/datasets/data_50.csv"
   # temp file to store results in
   tmpfile=tempfile()
   # we change the working dir to where the java exec is!
@@ -18,7 +18,7 @@ dataset.features<-function()
   # Target ID
   TID = 150
   # prepare the command by concatenating things
-  # ot should look like: java DatasetMetaFeatures ds.csv > tmp
+  # it should look like: java DatasetMetaFeatures ~/Downloads/data_50.csv 9 1035 150
   command=paste("java",exec, dataset,startFP,endFP,TID,">",tmpfile)
   system(command) # execute the command
   # read the results from the tmp file
