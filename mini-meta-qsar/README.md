@@ -10,30 +10,16 @@ This dir contains info on how to compute descriptors for datasets and targets
 - Needless to say you can modify code as you wish
 - Any questions, just ask!
 
-last update 26/09/14 by NS
+update on 03/10/14 by NS
+- Now the library computes less descriptors for experimental purposes
+- The TID_CS_Table.txt is required to look up a value needed for computing one diversity index (file provided by Dundee group)
+- We have to add more for regression datasets (currently the lib assumes classification datasets)
+- On my Machine, it took > 2.5 minutes to run on the sample data_50.csv file!
+- We need to pass 4 parameters to the java code:
+* The path/to/dataset/name
+* The index of the first FP column
+* The index of the last FP column (assuming all mid-columns are FP's)
+* The target ID
 
 
-function to retrieve dataset features from R:
-dataset.features<-function()
-{
-  # java exec name
-  exec="DatasetMetaFeatures" 
-  # exact path to dataset
-  dataset="~/mygit/metrics/graphs/eve_ds/TS3-Labeled.csv"
-  # temp file to store results in
-  tmpfile=tempfile()
-  # we change the working dir to where the java exec is!
-  wd <- getwd()
-  nwd = "~/test/"
-  setwd(nwd)
-  # prepare the command by concatenating things
-  # ot should look like: java DatasetMetaFeatures ds.csv > tmp
-  command=paste("java",exec, dataset ,">",tmpfile)
-  system(command) # execute the command
-  # read the results from the tmp file
-  features = readChar(tmpfile, file.info(tmpfile)$size)
-  # return to the original working directory
-  setwd(wd)
-  # return the results
-  features
-}
+
