@@ -272,7 +272,7 @@ public class DatasetMetaFeatures {
     	      } 
     	      
     	    }   
-    	    System.out.println("Generic_Div_Index," +sum/(nc*nc)); 
+    	    System.out.println("Generic_Diversity_Index," +sum/(nc*nc)); 
     	    
     	    /***** compute another diversity index *******/
     	    Hashtable TID_CS = getCS("TID_CS_Table.txt");
