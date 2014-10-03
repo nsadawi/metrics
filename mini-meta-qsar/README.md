@@ -19,7 +19,9 @@ update on 03/10/14 by NS
 * The path/to/dataset/name
 * The index of the first FP column
 * The index of the last FP column (assuming all mid-columns are FP's)
-* The target ID
+* The target ID (needed to look up a value in TID_CS_Table.txt)
+* e.g. compile and then:
+> java DatasetMetaFeatures ~/Downloads/data_50.csv 9 1035 150 
 
 
 
