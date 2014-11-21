@@ -42,10 +42,10 @@
 \section{The java code}
 \subsection{Settings:}
 \begin{enumerate}
-	\item Weka needs to exist
-	\item The $CLASSPATH$ needs to point to $weka.jar$
-	\item Setup $WEKA\_HOME$ environment variable
-	\item Setup $JAVA\_HOME$ environment variable			
+	\item Weka needs to exist on the system
+	\item Setup $WEKA\_HOME$ environment variable (example: $export WEKA\_HOME=/home/likewise-open/ACADEMIC/csstnns/binaries/weka-3-7-11/$)
+	\item Setup $JAVA\_HOME$ environment variable (example: $export JAVA\_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre/$)
+	\item The $CLASSPATH$ needs to point to $weka.jar$ (example: $export CLASSPATH=\$WEKA\_HOME/weka.jar$)			
 \end{enumerate} 
 
 \subsection{Calling java from R using package "rJava":}
@@ -54,7 +54,13 @@
 	\item .jaddClassPath('path/to/DCUntils')
 	\item obj=.jnew("DCUntils")
 	\item result=.jcall(obj,"D","getDimensionality","/full/path/to/csv/file.csv")
+\end{enumerate} 
 
+
+\subsection{A List of all methods (functions):}
+\begin{enumerate}
+	\item f1
+	\item f2
 \end{enumerate}    
 
 
