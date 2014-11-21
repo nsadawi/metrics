@@ -5,7 +5,7 @@
 
 \usepackage{babel}
 %\usepackage{amsmath}
-
+\usepackage{listings}
 \usepackage{color}
 
 \definecolor{darkgreen}{rgb}{0,0.5,0}
@@ -30,7 +30,7 @@
 %\usepackage{enumitem}
 
 %\onehalfspacing
-
+\newcommand{\shellcmd}[1]{\\\indent\indent\texttt{\footnotesize\# #1}\\}
 \begin{document}
 
 \title{Dataset Metafeatures}
@@ -43,17 +43,21 @@
 \subsection{Settings:}
 \begin{enumerate}
 	\item Weka needs to exist on the system
-	\item Setup $WEKA\_HOME$ environment variable (example: $export WEKA\_HOME=/home/likewise-open/ACADEMIC/csstnns/binaries/weka-3-7-11/$)
-	\item Setup $JAVA\_HOME$ environment variable (example: $export JAVA\_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre/$)
-	\item The $CLASSPATH$ needs to point to $weka.jar$ (example: $export CLASSPATH=\$WEKA\_HOME/weka.jar$)			
+	\item Setup \texttt{WEKA\_HOME} environment variable. Example:
+   	  \shellcmd{export WEKA\_HOME=/home/likewise-open/ACADEMIC/csstnns/binaries/weka-3-7-11/}
+
+	\item Setup \texttt{JAVA\_HOME} environment variable. Example: 
+	\shellcmd{export JAVA\_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre/}
+	\item The \texttt{CLASSPATH} needs to point to \texttt{weka.jar}. Example:
+	\shellcmd{export CLASSPATH=\$WEKA\_HOME/weka.jar}
 \end{enumerate} 
 
 \subsection{Calling java from R using package "rJava":}
 \begin{enumerate}
-	\item .jinit()
-	\item .jaddClassPath('path/to/DCUntils')
-	\item obj=.jnew("DCUntils")
-	\item result=.jcall(obj,"D","getDimensionality","/full/path/to/csv/file.csv")
+	\item Issue:\shellcmd{.jinit()}
+	\item Issue:\shellcmd{.jaddClassPath('path/to/DCUntils')}
+	\item Issue:\shellcmd{obj=.jnew("DCUntils")}
+	\item Issue:\shellcmd{result=.jcall(obj,"D","getDimensionality","/full/path/to/csv/file.csv")}
 \end{enumerate} 
 
 
