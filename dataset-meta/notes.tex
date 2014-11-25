@@ -39,8 +39,9 @@
 \maketitle
 
 \large
-\section{The java code}
-\subsection{Settings:}
+\section{Calling Java Functions from \texttt{R}}
+This section provides information on how to setup the environment so we can use the java package (which I implemented) from within \texttt{R} using the package \texttt{rJava}.
+\subsection{Settings (exports are normally done in the .bashrc file):}
 \begin{enumerate}
 	\item Weka needs to exist on the system
 	\item Setup \texttt{WEKA\_HOME} environment variable. Example:
@@ -53,18 +54,64 @@
 \end{enumerate} 
 
 \subsection{Calling java from R using package "rJava":}
+Execute the following inside \texttt{R}:
 \begin{enumerate}
-	\item Issue:\shellcmd{.jinit()}
-	\item Issue:\shellcmd{.jaddClassPath('path/to/DCUntils')}
-	\item Issue:\shellcmd{obj=.jnew("DCUntils")}
-	\item Issue:\shellcmd{result=.jcall(obj,"D","getDimensionality","/full/path/to/csv/file.csv")}
+	\item Initializes the Java Virtual Machine (JVM) with:\shellcmd{.jinit()}
+	\item Add the JAR file to the classpath with:\shellcmd{.jaddClassPath("/full/path/to/ds-metafeatures.jar")}
+	\item Add your current directory to the classpath with:\shellcmd{.jaddClassPath(".")}
+	\item Create a new Java object with: \shellcmd{obj=.jnew("dsmeta.DatasetMetaFeatures")}
+	\item Calls the Java methods (supplying their arguments) with:\shellcmd{result=.jcall(obj,"D","computeDimensionality","/full/path/to/csv/file.csv")}
+	Notice the \texttt{D} is for type \texttt{double}, \texttt{computeDimensionality} is the function name and \texttt{/full/path/to/csv/file.csv} is an argument. 
 \end{enumerate} 
 
 
-\subsection{A List of all methods (functions):}
+\subsection{A List of all functions in the Java Package:}
+The following is a detailed list of methods in the java package. Observe that each of them returns one real value. Also, please observe that the methods coloured in \textcolor{blue}{blue} require a categorical class (I can discretize if needed):
 \begin{enumerate}
-	\item f1
-	\item f2
+	
+	\item \textcolor{blue}{\underline{computeEquivNumOfAttr(String datasetPath):}} computes the equivalent number of attributes. From Expose: The equivalent number of attributes is a quick estimate of the number of attributes required, on average, to describe the class. \begin{equation} EN-atrr=\frac{H(C)}{\overline{MI(C,X)}} \end{equation} 
+
+	\item \underline{computeNumAttributes(String datasetPath)}: computes the number of attributes
+	\item \underline{computeNumInstances(String datasetPath)}: computes the number of instances
+	
+	\item \underline{computeDimensionality(String datasetPath)}: computes the dimensionality of the data, which is the ratio of number of attributes to number of instances
+	\item \underline{computeNumNominalAttributes(String datasetPath)}: computes the number of nomial attributes
+	\item \underline{computeNumNumericAttributes(String datasetPath)}: computes the number of numeric attributes
+	\item \underline{computeNumBinaryAttributes(String datasetPath)}: computes the number of binary attributes (all attributes in a dataset are checked and those who have two unique values are counted)
+	\item \underline{computeProportionOfNumericAttributes(datasetPath)}: the ratio of the number of numeric attributes to the total number of attributes
+	\item \underline{computeProportionOfNominalAttributes(datasetPath)}: the ratio of the number of nominal attributes to the total number of attributes
+	\item \underline{computeProportionOfBinaryAttributes(datasetPath)}: the ratio of the number of binary attributes to the total number of attributes
+	\item \textcolor{blue}{\underline{computeDefaultAccuracy(String datasetPath):}}  computes the default accuracy (The percentage of instances which classes are the same as the mean|mode class value) 
+	\item \underline{computeMeanMeansOfNumericAtts(String datasetPath)}:  computes the mean of means of numeric attributes
+	\item \underline{computeMeanStdDevOfNumericAtts(String datasetPath)}:  computes the mean std deviation of numeric attributes
+	\item \underline{computeMeanKurtosisOfNumericAtts(String datasetPath)}:   computes the mean kurtosis of numeric attributes 
+	\item \textcolor{blue}{\underline{computeClassEntropy(String datasetPath):}} computes the entropy of the class variable
+	\item \underline{computeMeanAttributeEntropy(String datasetPath)}:  computes the mean entropy of attributes
+	\item \underline{computeMutualInformation(String datasetPath)}: From Expose: $MI(Y,X)$, the \emph{mutual information} between nominal attributes $X$ and $Y$ describes the reduction in uncertainty of $Y$ due to the knowledge of $X$, and leans on the conditional entropy $H(Y|X)$. It is also the underlying measure of the information gain metric used in decision tree learners. \begin{eqnarray} MI(Y,X)&=&H(Y)-H(Y|X) \\ H(Y|X)&=&\sum_{i}p(X=x_{i})H(Y|X=x_{i}) \\ &=&-\sum_{i}\pi_{i+} \sum_{j}\pi_{j|i}log_{2}(\pi_{j|i}) \end{eqnarray}
+	\item \textcolor{blue}{\underline{computeNoise2SignalRatio(String datasetPath):}} from Expose: The noise to signal ratio is an estimate of the amount of non-useful information in the attributes regarding the class. $\overline{H(X)}$ is the average information (useful or not) of the attributes. \begin{equation} NS-ratio=\frac{\overline{H(X)}-\overline{MI(C,X)}}{\overline{MI(C,X)}} \end{equation} 
+	
+	\item \underline{computeMeanSkewnessOfNumericAtts(String datasetPath)}:  computes the mean skewness of numeric attributes
+	\item \underline{computeGenericDiversityIndex(String datasetPath,int startFP,int endFP)}: computes a generic diversity index for the dataset. Requires the zero-based index of the first and last FP columns (assuming all in-between are FP's)
+
+	\item \underline{computeExplicitDiversityIndex(String datasetPath, int startFP, int endFP, int cs)}: computes the explicit diversity index for the dataset. Requires the zero-based index of the first and last FP columns (assuming all in-between are FP's). Also requires a CS value which should be looked up in a special table using the target ID (table provided by Dundee group).
+\end{enumerate}   
+
+
+\section{A List of all functions in the \texttt{R} script:}
+The following is a detailed list of functions in the \texttt{dataset-meta.R} script which can be imported/imported to \texttt{R} with \texttt{source('/path/to/dataset-meta.R')}. Observe that each of them returns one real value. Also, please observe that here I perform \emph{equal-width} discretization for the class data if it is numerical and the function requires categorical class data. Please observe that the \texttt{data} object is a \emph{data frame}.
+\begin{enumerate}
+	
+	\item \underline{get\_discretized\_class\_entropy(data):} computes the class entropy. The class variable is discretized first if it is numerical.
+	\item \underline{get\_normalized\_class\_entropy(data):} computes the normalized class entropy which is the class entropy divided by $log(n)$ where $n$ is the number of categories. The class variable is discretized first if it is numerical.
+	\item \underline{get\_attribute\_entropy(data):} computes the average entropy of all attributes (sums entropy of all attribues and divides by number of attributes)
+	\item \underline{get\_normalized\_attribute\_entropy(data):} computes the normalized average entropy of all attributes (sums normalized entropy of all attribues and divides by number of attributes). The normalized entropy of each attribute is the entropy of this attribute divided by $log(n)$ where $n$ is the number of categories. The attribute is discretized first if it is numerical.
+	\item \underline{get\_mutual\_information(data):} computes the mutual information for each column with respect to all categories of the class variable (the class variable is discretized first if it is numerical) then computes the average mutual information for all columns
+	\item \underline{get\_equivalent\_number\_of\_attributes(data):} computes the equivalent number of attributes by dividing the discretized class entropy by the mutual information
+	\item \underline{get\_noise\_signal\_ratio(data):} computes the noise to signal ratio via: $(a-b)/b$ where $a$ is the attribute entropy and $b$ is the mutual information
+	\item \underline{get\_multiinformation(data):} computes the multiinformation (also called total correlation) among the random variables in the dataset.
+	
+	
+	
 \end{enumerate}    
 
 
